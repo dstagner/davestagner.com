@@ -2,7 +2,7 @@
 keywords = ["legacy", "version control", "git", "svn", "subversion", "github", "bitbucket"]
 date = "2017-03-17T00:00:00Z"
 title = "From $(whatever) to git"
-draft = true
+draft = false
 
 +++
 

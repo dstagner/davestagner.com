@@ -1,7 +1,7 @@
 +++
 title = "Fences, not silos"
 coverImage = "/img/Republika_TPP.jpg"
-draft = true
+draft = false
 date = "2017-03-17T16:32:33-05:00"
 
 +++
