@@ -1,4 +1,4 @@
-baseURL = "https://davestagner.com/"
+baseURL = ""
 languageCode = "en-us"
 title = "Dave Stagner"
 theme = "hugo-tranquilpeak-theme"
