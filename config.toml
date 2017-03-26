@@ -1,4 +1,4 @@
-baseURL = ""
+baseURL = "/"
 languageCode = "en-us"
 title = "Dave Stagner"
 theme = "hugo-tranquilpeak-theme"
@@ -69,7 +69,9 @@ theme = "hugo-tranquilpeak-theme"
   # You must use date format used by Go Time package https://golang.org/pkg/time/
   # Months (not work with short month like "jan", "feb", etc) are translated if translation exists on i18n folders
   # Default format is: January 2, 2006 
-  # dateFormat = "2 January 2006"
+  dateFormat = "2 January 2006"
+
+  defaultContentLanguage = "en-us"
 
   # Global keywords configuration. Following keywords will be add to every pages
   # keywords = ["development", "next-gen"]
