@@ -2,7 +2,7 @@ baseURL = "/"
 languageCode = "en-us"
 title = "Dave Stagner"
 theme = "hugo-tranquilpeak-theme"
-
+googleAnalytics = "UA-40292660-1"
 
 [author]
   name = "Dave Stagner"
@@ -140,5 +140,5 @@ theme = "hugo-tranquilpeak-theme"
 
   # Customize copyright value "© 2016 <CUSTOMIZATION>. All Rights Reserved"
   # [params.footer]
-  #   copyright = "<a href=\"https://github.com/kakawait\">kakawait</a>"
+  #   copyright = "<a href=\"https://davestagner.com\">Dave Stagner</a>"
 
