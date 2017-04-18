@@ -18,4 +18,12 @@ But what is a silo, anyway? Why do they come into being everywhere, when everyon
 
 Silos are a product of oversimplification of organizational boundaries. Necessary, valuable constraints give way to unnecessary and often counterproductive constraints. It starts with not thinking clearly about why we have organizational boundaries in the first place, and what those boundaries should and should not do. 
 
-As an alternative, I suggest thinking of organizational boundaries as fences. Fences limit mobility, but permit visibility. Fences keep the goats out of the vegetables, but still allow neighbors to talk with each other, share, and learn.
+As an alternative, I suggest thinking of organizational boundaries as fences. Fences limit mobility, but permit visibility. Fences keep the goats out of the vegetables, but still allow neighbors to talk with each other, share, and learn. 
+
+## Responsibility, access, and visibility
+
+Organizational boundaries usually form around areas of responsibility. This team is responsible for managing this system, that team manages that system. This implies both a positive and a negative - it means that other teams should _not_ be messing with that system, altering that data or producing that output. 
+
+<img style="float: right;" src="/img/help.jpg"/>
+
+And that's that. 
