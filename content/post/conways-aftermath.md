@@ -1,12 +1,10 @@
 +++
 title = "Conway's Aftermath"
-keywords = ["tech"]
-tags = ["tag1","tag2"]
-categories = ["category","subcategory"]
+keywords = ["tech", "Conway's Law", "Hacker Noon"]
 date = "2017-04-16T00:00:00Z"
+coverImage = "/img/Prosecutors_office_burned_bishkek.JPG"
 
 +++
-<img src="/img/Prosecutors_office_burned_bishkek.JPG"/>
 
 Conway’s Law is well known in the software industry. Here it is, in Mel Conway’s own words:
 
