@@ -1,6 +1,5 @@
 +++
 title: Mutating the immutable
-keywords: 
 date: "2017-10-04T19:57:40-05:00"
 +++
 
