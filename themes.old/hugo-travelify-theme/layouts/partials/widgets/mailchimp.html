@@ -1,0 +1,62 @@
+{{ if isset .Site.Params.widgets "mailchimp" }}
+{{ if isset .Site.Params.widgets "mailchimpform" }}
+{{ if .Site.Params.widgets.mailchimp }}
+<aside id="blog_subscription-2" class="widget"><h3 class="widget-title">{{with .Site.Data.l10n.widgets.mailchimp.title}}{{.}}{{end}}</h3>
+  <form action="{{ .Site.Params.widgets.mailchimpform }}" method="post">
+    <div>
+      <p>{{with .Site.Data.l10n.widgets.mailchimp.subscribe_text}}{{.}}{{end}}</p>
+    </div>
+    <p>
+      <input name="EMAIL" placeholder="Email Address" type="email">
+    </p>
+    <p>
+      <input name="FNAME" value="" placeholder="First Name" type="name">
+    </p>
+
+    <p >
+      <input value="Subscribe" type="submit">
+    </p>
+  </form>
+			<script>
+			/*
+			Custom functionality for safari and IE
+			 */
+			(function( d ) {
+				// In case the placeholder functionality is available we remove labels
+				if ( ( 'placeholder' in d.createElement( 'input' ) ) ) {
+					var label = d.querySelector( 'label[for=subscribe-field-blog_subscription-2]' );
+						label.style.clip 	 = 'rect(1px, 1px, 1px, 1px)';
+						label.style.position = 'absolute';
+						label.style.height   = '1px';
+						label.style.width    = '1px';
+						label.style.overflow = 'hidden';
+				}
+
+				// Make sure the email value is filled in before allowing submit
+				var form = d.getElementById('subscribe-blog-blog_subscription-2'),
+					input = d.getElementById('subscribe-field-blog_subscription-2'),
+					handler = function( event ) {
+						if ( '' === input.value ) {
+							input.focus();
+
+							if ( event.preventDefault ){
+								event.preventDefault();
+							}
+
+							return false;
+						}
+					};
+
+				if ( window.addEventListener ) {
+					form.addEventListener( 'submit', handler, false );
+				} else {
+					form.attachEvent( 'onsubmit', handler );
+				}
+			})( document );
+			</script>
+		
+</aside>
+
+{{ end }}
+{{ end }}
+{{ end }}

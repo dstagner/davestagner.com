@@ -1,0 +1,84 @@
+# Site settings
+baseURL = "http://example.org/"
+title = "Luxury Theme"
+theme = "hugo-luxury-theme"
+
+googleAnalytics = "UA-XXXXXXX-Y"
+
+# Site language settings.
+# "en" and "ru" are available at the moment
+DefaultContentLanguage = "en"
+
+[taxonomies]
+    tag = "tags"
+    category = "categories"
+
+paginatePath = "page"
+
+# Main menu
+
+[[menu.main]]
+    name = "Archives"
+    weight = 10
+    url = "/archives/"
+    
+[[menu.main]]
+    name = "Categories"
+    weight = 20
+    url = "/categories/"
+    
+[[menu.main]]
+    name = "Tags"
+    weight = 30
+    url = "/tags/"
+
+# Footer menu
+
+[[menu.footer]]
+    name = "Link One"
+    weight = 10
+    url = "http://example.org/"
+
+[[menu.footer]]
+    name = "Link Two"
+    weight = 20
+    url = "http://example.org/"
+
+[params]
+
+    # Meta
+    description = "Hugo Luxury Theme"
+    author = "Pavel Kanyshev"
+    keywords = "Hugo, Hugo theme, luxury theme" 
+
+	# Social settings
+	# You may change these with your social links or add others
+		
+	[[params.social]]
+		title = "Twitter"
+		icon = "fa-twitter"
+		link = "https://twitter.com/#"
+		
+	[[params.social]]
+		title = "Facebook"
+		icon = "fa-facebook"
+		link = "https://www.facebook.com/#"
+		
+	[[params.social]]
+		title = "Instagram"
+		icon = "fa-instagram"
+		link = "https://instagram.com/#"
+		
+	[[params.social]]
+		title = "GitHub"
+		icon = "fa-github"
+		link = "https://github.com/#"
+        
+	# Disqus comments
+	[params.disqus]
+        enable = false
+        disqusShortname = "" # your disqus shortname
+	
+	# Footer settings
+	[params.footer]
+		copyright = ""

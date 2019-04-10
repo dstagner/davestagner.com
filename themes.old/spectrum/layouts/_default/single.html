@@ -1,0 +1,28 @@
+{{ define "main" }}
+<article class="content is-medium">
+  {{ with .Resources.GetMatch "featured-image" }}
+    <figure class="image is-marginless">
+      <img src="{{ .Permalink }}" alt="{{ .Title }}"/>
+    </figure>
+  {{ end }}
+
+  <h2 class="title is-marginless">
+    {{ .Title }}
+  </h2>
+  <time class="has-text-weight-light" datetime="{{ .PublishDate.Format "2006-01-02" }}">
+      {{ .PublishDate.Format "Mon Jan 2 2006" }}
+  </time>
+
+  <p>
+    {{ .Content }}
+  </p>
+</article>
+
+<div class="tags">
+  {{ range .Params.tags }}
+    <a href="{{ "tags" | absURL }}/{{ . | urlize }}" class="tag is-medium">{{ . }}</a>
+  {{ end }}
+</div>
+
+{{ template "_internal/disqus.html" . }}
+{{ end }}

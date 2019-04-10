@@ -1,0 +1,18 @@
+{{- $config := .Site.Data.config -}}
+<header>
+  <div class="float-right" id="store-banners">
+    {{ if $config.appLinks.appStore }}
+    <a href="#0">
+      <img src="{{- .Site.BaseURL -}}img/store-banners/appstore.svg" alt="">
+    </a>
+    {{ end }}
+    {{ if $config.appLinks.playStore }}
+    <a href="#0">
+      <img src="{{- .Site.BaseURL -}}img/store-banners/playstore.svg" alt="">
+    </a>
+    {{ end }}
+  </div>
+  <a href="{{.Site.BaseURL}}">
+    <img width="60px" src="{{- .Site.BaseURL -}}img/{{- $config.logoColored -}}" alt="">
+  </a>
+</header>

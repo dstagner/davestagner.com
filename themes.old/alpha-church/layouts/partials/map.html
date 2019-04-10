@@ -1,0 +1,11 @@
+{{ if .Site.Params.Map.latitude }}
+  {{ if .Site.Params.Map.longitude }}
+      {{ "<!-- OpenStreetMap -->" | safeHTML }}
+      <span style="display: none; visibility: hidden">
+        <input id="map-lat" value="{{ .Site.Params.Map.latitude }}" />
+        <input id="map-lng" value="{{ .Site.Params.Map.longitude }}" />
+        <input id="map-zoom" value="{{ .Site.Params.Map.zoom }}" />
+      </span>
+      <div id="map" class="box"></div>
+  {{ end }}
+{{ end }}

@@ -1,0 +1,14 @@
+{{ "<!-- header -->" | safeHTML}}
+<section id="header">
+  <header class="major 1">
+    <h1>{{ with $.block.title }} {{ . | markdownify }} {{ end }}</h1>
+    <p>{{ with $.block.description }} {{ . | markdownify }} {{ end }}</p>
+  </header>
+  <div class="container">
+    <ul class="actions">
+      {{ if .next }}
+        <li><a href="#{{.next.id}}" class="button special scrolly">{{ with .block.buttontext }}{{ . | markdownify }}{{ end }}</a></li>
+      {{ end }}
+    </ul>
+  </div>
+</section>

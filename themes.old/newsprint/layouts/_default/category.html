@@ -1,0 +1,28 @@
+{{- partial "header" . -}}
+
+<h1>{{.Title}}</h1>
+<section class="content list">
+	{{- range .Pages -}}
+	<article class="thumb">
+		<div class="imgthumb">
+		{{- if .Params.thumbnail -}}
+		<a href="{{ .RelPermalink }}">{{ partial "thumbnail" .Params }}</a>
+		{{- end -}}
+		</div>
+		<div class="prevtext">
+		<h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
+		{{- partial "datetime" .Date -}}
+		{{- if .Params.excerpt -}}
+		<p>{{ .Params.excerpt }}</p>
+		{{- else -}}
+		{{- if .Params.description -}}
+		<p>{{ .Params.description }}</p>
+		{{- else -}}
+		{{- if .Summary -}}<p>{{ .Summary }}</p>{{- end -}}
+		{{- end -}}{{- end -}}
+		</div>
+	</article>
+	{{- end -}}
+</section>
+
+{{- partial "footer" . -}}

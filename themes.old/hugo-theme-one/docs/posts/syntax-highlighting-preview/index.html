@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Syntax Highlighting Preview</title>
+	
+	<meta name="description" content="">
+	<meta name="image" content="">
+	
+	<meta itemprop="name" content="Syntax Highlighting Preview">
+	<meta itemprop="description" content="">
+	<meta itemprop="image" content="">
+	
+	<meta name="og:title" content="Syntax Highlighting Preview">
+	<meta name="og:description" content="">
+	
+	<meta name="og:url" content="https://resugary.github.io/hugo-theme-one/posts/syntax-highlighting-preview/">
+	<meta name="og:site_name" content="Syntax Highlighting Preview">
+	<meta name="og:type" content="article">
+	
+	<meta name="article:tag" content="example code ">
+	<link rel="stylesheet" type="text/css" href="https://resugary.github.io/hugo-theme-one/css/style.css">
+	
+	
+</head>
+
+<body>
+
+<header>
+	
+	<a href="https://resugary.github.io/hugo-theme-one/" style="float: left;color:#ff3b30;">Hugo Theme One</a>
+	
+	&nbsp;&nbsp;<a href="https://resugary.github.io/hugo-theme-one/archives/" style="color:#777;">Archives</a>&nbsp;&nbsp;<a href="https://resugary.github.io/hugo-theme-one/about/" style="color:#777;">About</a>
+	
+	<a href="https://resugary.github.io/hugo-theme-one/posts/index.xml" style="color:#777;float: right;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+</header>
+
+
+<div class="content">
+  <h1>Syntax Highlighting Preview</h1>
+  <aside><a href="/hugo-theme-one/tags/example/">example</a></a>&nbsp;&nbsp;&nbsp;<a href="/hugo-theme-one/tags/code/">code</a></a>&nbsp;&nbsp;&nbsp;</aside>
+  <p><p>Hugo comes with really fast syntax highlighting from Chroma and provides a <a href="https://xyproto.github.io/splash/docs/all.html">Chroma style gallery</a>. You can configure syntax highlighter in the <code>config.toml</code> file. The theme one uses the pygments style color style.</p>
+
+<p>CSS</p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">@<span style="color:#008000;font-weight:bold">font-face</span> {
+  <span style="color:#008000;font-weight:bold">font-family</span><span style="color:#666">:</span> <span style="color:#008000;font-weight:bold">Chunkfive</span><span style="color:#666">;</span> <span style="color:#008000;font-weight:bold">src</span><span style="color:#666">:</span> <span style="color:#008000;font-weight:bold">url</span><span style="color:#666">(</span><span style="color:#ba2121">&#39;Chunkfive.otf&#39;</span><span style="color:#666">);</span>
+}
+
+<span style="color:#008000;font-weight:bold">body</span><span style="color:#666">,</span> .<span style="color:#00f;font-weight:bold">usertext</span> {
+  <span style="color:#008000;font-weight:bold">color</span>: <span style="color:#666">#F0F0F0</span>; <span style="color:#008000;font-weight:bold">background</span>: <span style="color:#666">#600</span>;
+  <span style="color:#008000;font-weight:bold">font-family</span>: Chunkfive, sans;
+}
+
+@<span style="color:#008000;font-weight:bold">import</span> <span style="color:#008000;font-weight:bold">url</span><span style="color:#666">(</span><span style="color:#008000;font-weight:bold">print</span>.<span style="color:#00f;font-weight:bold">css</span><span style="color:#666">)</span>;
+@<span style="color:#008000;font-weight:bold">media</span> <span style="color:#008000;font-weight:bold">print</span> {
+  <span style="color:#008000;font-weight:bold">a</span><span style="color:#666">[</span><span style="color:#008000;font-weight:bold">href</span><span style="color:#666">^=</span><span style="color:#008000;font-weight:bold">http</span><span style="color:#666">]</span>::<span style="color:#a2f">after</span> {
+    <span style="color:#008000;font-weight:bold">content</span>: <span style="color:#008000">attr</span>(href)
+  }
+}</code></pre></div>
+<p>JavaScript</p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#008000;font-weight:bold">function</span> $initHighlight(block, cls) {
+  <span style="color:#008000;font-weight:bold">try</span> {
+    <span style="color:#008000;font-weight:bold">if</span> (cls.search(<span style="color:#b68">/\bno\-highlight\b/</span>) <span style="color:#666">!=</span> <span style="color:#666">-</span><span style="color:#666">1</span>)
+      <span style="color:#008000;font-weight:bold">return</span> process(block, <span style="color:#008000;font-weight:bold">true</span>, <span style="color:#666">0x0F</span>) <span style="color:#666">+</span>
+             <span style="color:#ba2121">` class=&#34;</span><span style="color:#b68;font-weight:bold">${</span>cls<span style="color:#b68;font-weight:bold">}</span><span style="color:#ba2121">&#34;`</span>;
+  } <span style="color:#008000;font-weight:bold">catch</span> (e) {
+    <span style="color:#408080;font-style:italic">/* handle exception */</span>
+  }
+  <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#008000;font-weight:bold">var</span> i <span style="color:#666">=</span> <span style="color:#666">0</span> <span style="">/ 2; i &lt; classes.length; i++) {</span>
+    <span style="color:#008000;font-weight:bold">if</span> (checkCondition(classes[i]) <span style="color:#666">===</span> <span style="color:#008000;font-weight:bold">undefined</span>)
+      console.log(<span style="color:#ba2121">&#39;undefined&#39;</span>);
+  }
+}
+
+<span style="color:#008000;font-weight:bold">export</span>  $initHighlight;
+</code></pre></div>
+<p>Python</p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a2f">@requires_authorization</span>
+<span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">somefunc</span>(param1<span style="color:#666">=</span><span style="color:#ba2121">&#39;&#39;</span>, param2<span style="color:#666">=</span><span style="color:#666">0</span>):
+    <span style="color:#ba2121">r</span><span style="color:#ba2121">&#39;&#39;&#39;A docstring&#39;&#39;&#39;</span>
+    <span style="color:#008000;font-weight:bold">if</span> param1 <span style="color:#666">&gt;</span> param2: <span style="color:#408080;font-style:italic"># interesting</span>
+        <span style="color:#008000;font-weight:bold">print</span> <span style="color:#ba2121">&#39;Gre</span><span style="color:#b62;font-weight:bold">\&#39;</span><span style="color:#ba2121">ater&#39;</span>
+    <span style="color:#008000;font-weight:bold">return</span> (param2 <span style="color:#666">-</span> param1 <span style="color:#666">+</span> <span style="color:#666">1</span> <span style="color:#666">+</span> <span style="color:#666">0b10</span>l) <span style="color:#a2f;font-weight:bold">or</span> None
+
+<span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">SomeClass</span>:
+    <span style="color:#008000;font-weight:bold">pass</span>
+
+<span style="color:#666">&gt;&gt;&gt;</span> message <span style="color:#666">=</span> <span style="color:#ba2121">&#39;&#39;&#39;interpreter
+</span><span style="color:#ba2121">... prompt&#39;&#39;&#39;</span></code></pre></div>
+<p>Shell Session</p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ <span style="color:#008000">echo</span> <span style="color:#19177c">$EDITOR</span>
+vim
+$ git checkout master
+Switched to branch <span style="color:#ba2121">&#39;master&#39;</span>
+Your branch is up-to-date with <span style="color:#ba2121">&#39;origin/master&#39;</span>.
+$ git push
+Everything up-to-date
+$ <span style="color:#008000">echo</span> <span style="color:#ba2121">&#39;All
+</span><span style="color:#ba2121">&gt; done!&#39;</span>
+All
+<span style="color:#008000;font-weight:bold">done</span>!</code></pre></div></p>
+</div>
+
+
+  <p>Written on Dec 20, 2017.</p>
+
+
+<footer>
+	<p>&copy; 2018 All rights reserved.</p>
+</footer>
+</body>
+</html>

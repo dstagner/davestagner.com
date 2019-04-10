@@ -1,0 +1,17 @@
+{{ define "main" }}
+                    <section id="main" class="wrapper">
+                        <div class="inner">
+                            <h1 class="major">{{ i18n "archives" }}</h1>
+                            {{ with .Site.GetPage "section" "posts" }}
+                            {{ range .Data.Pages.GroupByDate "2006" }}
+                                <h2>{{ .Key }}</h2>
+                                    <ul>
+                                        {{ range .Pages }}
+                                        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+                                        {{ end }}
+                                    </ul>
+                                {{ end }}
+                                {{ end }}
+                        </div>
+                    </section>
+{{ end }}

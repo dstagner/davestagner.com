@@ -1,0 +1,23 @@
+{
+  "presets": [
+    [
+      "env", {
+        "targets": {
+          "browsers": [">1%"]
+        }
+      }
+    ]
+  ],
+  "env": {
+    "production": {
+      "comments": false,
+      "compact": true,
+      "presets": [
+         "minify"
+      ]
+    },
+    "development": {
+      "compact": false
+    }
+  }
+}

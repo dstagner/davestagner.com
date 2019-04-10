@@ -1,0 +1,340 @@
+// Zen custom styles
+
+p,
+pre {
+  @include margin(.75 0);
+}
+
+// Page
+
+body {
+  background-color: $backdrop;
+}
+
+.page {
+  background-color: $body-bg;
+}
+
+.header {
+  padding-top: $zen-gutters / 2;
+
+  @include respond-to(s) {
+    padding-top: $zen-gutters;
+  }
+}
+
+.footer {
+  @include margin-top(1.5);
+  @include padding(.5 0);
+  text-align: center;
+  border-top: 2px solid $brand;
+
+  p {
+    margin: 0;
+  }
+}
+
+// Apply smaller text to blocks, footer etc.
+
+th,
+label,
+legend,
+figcaption {
+  @include type-layout(s, 1);
+
+  @include respond-to(xxl) {
+    @include type-layout(s-2, 1);
+  }
+}
+
+.language-selector,
+article > header,
+.content-dates,
+.footer {
+  @include type-layout(xs, 1);
+
+  @include respond-to(xxl) {
+    @include type-layout(xs-2, 1);
+  }
+}
+
+// Apply heading font stack to heading, labels etc.
+
+h1,
+h2,
+h3,
+th,
+nav,
+label,
+legend,
+article > header,
+.content-dates,
+.header,
+.footer {
+  @include typeface(headings);
+  color: $headings;
+  font-weight: normal;
+}
+
+article > .content,
+aside {
+  ul {
+    @extend %ul-straight-left;
+  }
+
+  ol {
+    @extend %ol-straight-left;
+  }
+}
+
+article {
+
+  & > header {
+    color: $text-meta;
+
+    p {
+      @include margin(.2 0);
+    }
+
+  }
+
+  .submitted,
+  .tags {
+    @include respond-to(l) {
+      display: inline-block;
+      padding-right: 1rem;
+    }
+  }
+
+  .tags {
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul,
+    li {
+      display: inline;
+    }
+
+    li {
+      list-style-type: none;
+    }
+
+    a {
+      @include padding-right(.2);
+    }
+  }
+
+  code {
+    @include type-layout(xs, 1);
+    word-wrap: break-word;
+
+    @include respond-to(xxl) {
+      @include type-layout(xs-2, 1);
+    }
+  }
+
+  pre {
+    color: $code;
+    border-radius: 3px;
+    padding: 5px;
+    border: 1px solid $border;
+    background-color: $text-bg;
+    overflow: auto;
+    max-height: 250px;
+    max-width: 90vw;
+
+    @include respond-to(s) {
+      max-width: 600px;
+    }
+
+    & > code {
+      display: inline-block;
+      white-space: pre;
+    }
+  }
+
+  .content-dates {
+    color: $text-meta;
+    text-align: right;
+  }
+}
+
+.title-submitted {
+  margin-bottom: 0;
+}
+
+figure {
+  @include respond-to(s) {
+    display: table;
+
+    img {
+      display: block;
+    }
+
+    &.left {
+      @include padding(0 .5 .5 0);
+      margin: 0;
+      float: left;
+      clear: both;
+
+      figcaption {
+        @include padding(0 .5 .5 0);
+      }
+    }
+
+    &.right {
+      @include padding(0 0 .5 .5);
+      margin: 0;
+      float: right;
+      clear: both;
+
+      figcaption {
+        @include padding(0 0 .5 .5);
+      }
+    }
+  }
+}
+
+figcaption {
+  @include respond-to(s) {
+    display: table-caption;
+    caption-side: bottom;
+  }
+
+  h4,
+  p {
+    margin: 0;
+  }
+}
+
+// Navigation
+
+.main-menu {
+  @include margin-top(.5);
+  outline: 0;
+
+  li {
+    @include margin-right(.5);
+    @include margin-bottom(.5);
+    padding: 0;
+  }
+
+  a {
+    display: block;
+    background-color: $brand;
+    color: $text-bg;
+    padding: 2px 8px;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      background-color: $brand-dark;
+    }
+
+    &:active,
+    &.active {
+      background-color: $brand;
+      text-decoration: underline;
+    }
+  }
+}
+
+.menu a.active {
+  text-decoration: none;
+}
+
+// Messages
+
+.message {
+  padding: 10px;
+  border-width: 1px;
+  border-style: solid;
+  width: 95%;
+
+  &.status {
+    background-color: $status-bg;
+    color: $status;
+    border-color: $status;
+  }
+
+  &.warning {
+    background-color: $warning-bg;
+    color: $warning;
+    border-color: $warning;
+  }
+
+  &.error {
+    background-color: $error-bg;
+    color: $error;
+    border-color: $error;
+  }
+}
+
+// Search
+
+.search-form {
+  @include padding(.5 0);
+}
+
+.search-text {
+  @include type-layout(l, 1);
+}
+
+// Language selector
+
+.language-selector {
+  .navbar {
+    &::before {
+      content: '';
+      background-image: url('../images/language-icon.png');
+      background-size: 24px;
+      background-repeat: no-repeat;
+      height: 24px;
+      width: 24px;
+      margin-right: 8px;
+    }
+  }
+}
+
+// Form
+
+.content {
+  input,
+  textarea {
+    @include margin-bottom(.75);
+    width: 92%;
+
+    &:required+span::after {
+      content: ' *';
+      color: $red;
+      vertical-align: top;
+    }
+
+    &:not(:placeholder-shown):valid {
+      background-color: $status-bg;
+    }
+
+    &:not(:placeholder-shown):invalid {
+      background-color: $error-bg;
+    }
+  }
+
+  button {
+    display: block;
+  }
+}
+
+.js-submitted {
+  input,
+  textarea {
+    &:valid {
+      background-color: $status-bg;
+    }
+
+    &:invalid {
+      background-color: $error-bg;
+    }
+  }
+}

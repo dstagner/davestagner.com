@@ -1,0 +1,17 @@
+{{ partial "header.html" . }}
+{{ partial "flex-start.html" . }}
+
+<div class="posts">
+  {{ range first 5 (where .Data.Pages "Section" "links") }}
+{{ .Render "summary" }}
+  {{ end }}
+</div>
+<hr />
+<div class="posts">
+  {{ range first 10 (where .Data.Pages "Section" "posts") }}
+{{ .Render "summary" }}
+  {{ end }}
+</div>
+
+{{ partial "flex-end.html" . }}
+{{ partial "footer.html" . }}

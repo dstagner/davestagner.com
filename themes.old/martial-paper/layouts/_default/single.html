@@ -1,0 +1,19 @@
+{{ partial "head.html" . }}
+<body>
+	{{ partial "header.html" . }}
+	<div class="scrollable_block">
+		<div class="centered_block">
+			<article class="martialpaper_yellowborder">
+				<section class="martialpaper_title1">
+					<span> {{ .Site.Title }} <span class = "martialpaper_yellow">{{ .Params.streamtitle }}</span></span>
+				</section>
+				<section>
+					<span class="martialpaper_title2">{{ if eq .Params.timeless "true" }}{{ else }}{{ .Date.Format "2006 January" }}: {{ end }}<span class = "martialpaper_yellow">{{.Title }}</span></span>
+					{{.Content}}
+				</section>
+			</article>
+		{{ partial "footer.html" . }}
+		</div>
+	</div>
+</body>
+</html>

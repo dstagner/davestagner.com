@@ -1,0 +1,11 @@
+{{ if .Sections }}
+ {{ range (last 1 .Sections) }}
+   {{ partial "localnav-findlastinsection" . }}
+ {{ end }}
+{{ else if .Data.Pages }}
+  {{ range (last 1 .Data.Pages) }}
+    <a href="{{ .URL | relURL }}">Prev</a>
+  {{ end }}
+{{ else }}
+  <a href="{{ .URL | relURL }}">Prev</a>
+{{ end }}

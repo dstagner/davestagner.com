@@ -1,0 +1,7 @@
+{{- if .Params.cover -}}
+<div {{if .Params.cover_caption}}data-caption="{{.Params.cover_caption}}" {{end}}class="coverimg">
+	{{- if .Params.cover_link}}<a href="{{.Params.cover_link}}">{{- end -}}
+		<img src="{{.Params.cover}}" {{if .Params.cover_title}}title="{{.Params.cover_title}}" {{end}}alt="{{if .Params.cover_alt}}{{.Params.cover_alt}}{{end}}"{{if .Params.cover_width}} width="{{.Params.cover_width}}"{{end}}/>
+	{{- if .Params.cover_link -}}</a>{{- end -}}
+</div>
+{{- end -}}

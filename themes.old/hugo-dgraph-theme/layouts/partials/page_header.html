@@ -1,0 +1,22 @@
+<header id="page-header" class="page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 offset-0 col-md-10 offset-md-1">
+        <figure class="page-logo"><a href="/"><img src="/images/logo.svg" alt="Dgraph Logo"></a></figure>
+				{{if .Site.Params.github}}
+          <span class="topnav-stargazers-wrapper">
+            <a href="https://github.com/{{.Site.Params.github}}" data-show-count="true" aria-label="Star Dgraph on GitHub" class="github-button">Star</a>
+          </span>
+        {{end}}
+
+        <a
+            href="{{.Site.Params.website}}"
+            title="Dgraph Website"
+            class="button button-dgraph-site button--outline pull-right"
+        >
+          Dgraph.io
+        </a>
+      </div>
+    </div>
+  </div>
+</header>

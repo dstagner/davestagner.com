@@ -1,0 +1,15 @@
+{{ define "main" }}
+                    <section id="main" class="wrapper">
+                        <div class="inner">
+                            <h1 class="major">{{ i18n "tags" }}</h1>
+                                {{ range $key, $taxonomy := .Site.Taxonomies.tags }}
+                                <h2>{{ $key }}</h2>
+                                    <ul>
+                                    {{ range $taxonomy.Pages }}
+                                        <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
+                                    {{ end }}
+                                    </ul>
+                                {{ end }}
+                        </div>
+                    </section>
+{{ end }}

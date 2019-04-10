@@ -1,0 +1,26 @@
+{{ define "title" }}
+  {{.Title}}
+{{ end }}
+{{ define "main" }}
+<main class="Main">
+<!-- Copyright 2018 Daniel F. Dickinson,
+     Released under the Creative Commons BY (Attribution) 4.0 License -->
+  <article class="MainContent">
+    <section class="LicenseSection">
+      <h1 class="Title">{{.Title}}</h1>
+      <pre class="LicenseBlock">{{ $license := .Params.licenseFile }}{{ $licenseFile := resources.Get (print "licenses/" $license) }}{{ with $license }}{{ $licenseFile.Content }}{{ else }}{{ .Site.Params.licenseFile | readFile }}{{ end }}</pre>
+    </section>
+    <section class="LicensePagesSection">
+      <h2>Pages with {{ $license }} license</h2>
+      <ul class="PageLicenseList">
+       {{ range .Site.Pages }}
+         {{ if in .Params.license $license }}
+           <li><a href="{{ .URL | relURL }}">{{ if not .Title}}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}</a></li>
+         {{ end }}
+       {{ end }}
+      </ul>
+    </section>
+  </article>
+  {{ partial "sidebar-right" . }}
+</main>
+{{ end }}

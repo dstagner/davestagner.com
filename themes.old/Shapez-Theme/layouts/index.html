@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+    <head>
+        {{ partial "head.html" . }}
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="start-screen">
+                <div class="mobile">
+                    <div><img src="{{ .Site.BaseURL }}{{ .Site.Params.logo }}"></div>
+                    <div><a href="{{ .Site.BaseURL }}{{ .Site.Params.button_2 }}">Playground</a></div>
+                    <div><a href="{{ .Site.BaseURL }}{{ .Site.Params.button_3 }}" rel="me">About</a></div>
+                </div>
+                {{ partial "start-screen.svg" . }}
+            </div>
+
+            <div id="scroll-down" class="timeline-container">
+            {{ if or .Site.Params.message (and (not .Site.Params.title_l1) (not .Site.Params.title_l2)) }}
+                <div class="timeline-post" style="padding-bottom: 50px;">
+                    <div class="attention-message">
+                        </br><h1>!</h1>
+                    </div>
+                    <h3>{{if and (not .Site.Params.title_l1) (not .Site.Params.title_l2)}}Error: Please use sample-config.toml from Shapez-Theme folder as boilerplate config.{{ else }}{{ .Site.Params.message }}{{ end }}</h3>
+                </div>
+            {{ end }}
+
+            {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
+            {{ range $paginator.Pages.ByDate.Reverse }}
+                <div class="timeline-post">
+                    <div class="publish-date">
+                        </br></br><h3>{{ .Date.Format "02" }}</h3></br>{{ .Date.Format "January" | upper }}
+                    </div>
+
+                    <div class="timeline-post-body">
+                            <a href="{{ .Permalink }}"><h3>{{ .Title }}</h3></a>
+                        <div class="timeline-post-description">
+                            <p>
+                                {{ .Summary }}
+                            </p>
+                            {{ if .Truncated }}<a href="{{ .Permalink }}"><p class="timeline-post-read-more"><a href="{{ .Permalink }}">Read more &rarr;</a></p>{{ end }}
+                        </div> 
+                    </div>
+                </div>
+            {{ end }}
+                {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
+                    <div id="moustage">
+                        {{ partial "face.svg" . }}
+                    </div>
+                {{ end }}
+            </div>
+            {{ partial "footer.html" . }}
+        </div>
+    </body>
+</html>

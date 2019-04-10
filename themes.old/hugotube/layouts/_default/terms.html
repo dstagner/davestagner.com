@@ -1,0 +1,12 @@
+{{ define "schematype" }}CollectionPage{{ end }}
+
+{{ define "main" }}
+
+<h2>{{ i18n "taxonomyTerms" . }}</h2>
+<ul class="tags">
+    {{ range ($.Site.GetPage "taxonomyTerm" "tags").Pages }}
+    <li><a href="{{ .Permalink }}">{{ .Title}}</a></li>
+    {{ end }}
+</ul>
+
+{{ end }}

@@ -1,0 +1,19 @@
+<footer class="bottom-footer">
+  <div class="copyright">
+    <p>
+    {{ if isset .Site.Params "Author" }}&copy; {{ .Site.Params.Author }}.{{end}}
+    <a href="http://creativecommons.org/licenses/by/4.0/" title="Creative Commons Attribution">Some rights reserved</a>; 
+    please attribute properly and link back.
+    {{ if isset .Site.Params "Email" }}<a href="mailto:{{ .Site.Params.Email }}">contact.</a>{{end}}
+    {{ if isset .Site.Params "GithubUser" }}<a href="https://github.com/{{ .Site.Params.GithubUser }}">github.</a>{{end}}
+    </p>
+  </div>
+</footer>
+
+<script>
+    renderMathInElement(document.getElementById('main'));
+</script>
+
+</div>
+</body>
+</html>

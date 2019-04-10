@@ -1,0 +1,37 @@
+{{- partial "header" . -}}
+
+<h1>{{.Data.Plural}}</h1>
+<section class="content list">
+	{{ $type := .Type }}
+	{{- range .Data.Terms.ByCount -}}
+	{{- if gt (len .WeightedPages) 1 -}}
+	{{ $name := .Name }}
+	{{ $pages := .Pages.ByPublishDate.Reverse }}
+
+	{{ with $.Site.GetPage (printf "/%s/%s" $type $name) }}
+	<article class="thumb">
+		<div class="imgthumb">
+			{{- if .Params.thumbnail -}}
+			<a href="{{ .RelPermalink }}">{{ partial "thumbnail" .Params }}</a>
+			{{- else -}}
+			{{- with (index $pages  0) -}}
+			{{- if .Params.thumbnail -}}
+			<a href="{{ .RelPermalink }}">{{ partial "thumbnail" .Params }}</a>
+			{{- end -}}
+			{{- end -}}
+			{{- end -}}
+		</div>
+		<div class="prevtext">
+			<h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
+			{{- partial "datetime" .Date -}}
+			{{- if .Params.description -}}
+			<p>{{ .Params.description }}</p>
+			{{- end -}}
+		</div>
+	</article>
+	{{- end -}}
+	{{- end -}}
+	{{- end -}}
+</section>
+
+{{- partial "footer" . -}}

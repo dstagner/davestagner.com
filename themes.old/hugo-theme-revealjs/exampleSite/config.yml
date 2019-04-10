@@ -1,0 +1,21 @@
+baseURL: https://hugo-theme-revealjs.netlify.com/
+title: Hugo Theme RevealJS
+themesDir: "../../"
+theme: "hugo-theme-revealjs"
+
+params:
+    reveal_theme: black
+    revealjs:
+        controls: true
+        progress: true
+        history: true
+        center: true
+        height: 800
+        width: 1500
+
+disableKinds:
+    - "sitemap"
+
+outputs:
+    home:
+        - "html"

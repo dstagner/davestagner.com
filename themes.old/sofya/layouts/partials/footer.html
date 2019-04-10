@@ -1,0 +1,21 @@
+</div>
+  <footer class="site-footer">
+    <div class="site-footer-container">
+      <ul>
+        {{ if isset .Site.Params "linkedin" }}
+        <li><a href="{{ .Site.Params.linkedin }}"><img src="{{ .Site.BaseURL }}img/linkedin-logo.svg"></a></li> {{ end }}
+        {{ if isset .Site.Params "github" }}
+        <li><a href="{{ .Site.Params.github }}"><img src="{{ .Site.BaseURL }}img/github-logo.svg"></a></li> {{ end }}
+        {{ if isset .Site.Params "twitter" }}
+        <li><a href='{{ .Site.Params.twitter }}'><img src="{{ .Site.BaseURL }}img/twitter-logo.svg"></a></li> {{ end }}
+        {{ if isset .Site.Params "quora" }}
+        <li><a href="{{ .Site.Params.quora }}"><img src="{{ .Site.BaseURL }}img/quora-logo.svg"></a></li> {{ end }}
+        {{ if isset .Site.Params "stackoverflow" }}
+        <li><a href="{{ .Site.Params.stackoverflow }}"><img src="{{ .Site.BaseURL }}img/stack-overflow.svg"></a></li> {{ end }}
+        {{ if isset .Site.Params "facebook" }}
+        <li><a href="{{ .Site.Params.facebook }}"><img src="{{ .Site.BaseURL }}img/facebook-logo.svg"></a></li> {{ end }}
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

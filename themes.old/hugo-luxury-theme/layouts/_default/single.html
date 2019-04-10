@@ -1,0 +1,24 @@
+{{ define "main" }}
+                    <section id="main" class="wrapper">
+                        <div class="inner">
+                            <h1 class="major">{{ .Title }}</h1>
+                            <span class="image fit">
+                            {{ if and (isset .Params "featuredimage") (ne .Params.featuredImage "") }}
+                            <img src="{{ .Params.featuredImage }}" alt="{{ .Title }}" />
+                            {{ end }}
+                            {{ with .Params.youtube }}
+                            <iframe src="https://www.youtube-nocookie.com/embed/{{ . }}?rel=0" frameborder="0" allowfullscreen></iframe>
+                            {{ end }}
+                            </span>
+                            {{ partial "post-meta" . }}
+                            {{ .Content }}
+                        </div>
+                    </section>
+                    
+{{ partial "pagination" . }}
+
+{{ if .Site.Params.disqus.enable }}
+{{ partial "disqus" . }}
+{{ end }}
+
+{{ end }}

@@ -1,0 +1,13 @@
+name = "Martial Paper"
+license = "MIT"
+licenselink = "https://github.com/pedrodude/martial-paper/LICENSE.md"
+description = "A minimalist, smart, paper theme"
+homepage = "https://github.com/pedrodude/martial-paper"
+tags = ["minimal", "blog", "product", "personal", "responsive", "starter"]
+features = ["feature-light for easy customisation", "blog post or standard content driven by frontmatter", "about link"]
+min_version = 0.14
+
+[author]
+  name = "Peter Carleton"
+  homepage = "http://pedrodude.com"
+

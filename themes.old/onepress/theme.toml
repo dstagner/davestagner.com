@@ -1,0 +1,16 @@
+# theme.toml template for a Hugo theme
+# See https://github.com/gohugoio/hugoThemes#themetoml for an example
+
+name = "Onepress"
+license = "Apache 2.0"
+licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
+description = "A clean, simple and responsive hugo theme for bloggers."
+homepage = "https://github.com/ijsucceed/onepress"
+tags = [ "responsive", "disqus", "widgets", "blog", "fontawesome", "minimal"]
+features = [ "comments", "social icons", "posts", "syntax highlighting"]
+min_version = "0.41"
+
+[author]
+  name = "Jeremiah Succeed"
+  homepage = "https://ijsucceed.com"
+

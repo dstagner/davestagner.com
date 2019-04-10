@@ -1,0 +1,35 @@
+{{ define "title" }}{{.Title}} | {{.Site.Title}}{{ end }}
+
+{{ define "description" }}{{.Title}} on {{.Site.Title}}{{ end }}
+
+{{ define "main" }}
+<section>
+  {{ if .Content }}
+  <article>
+    {{ partial "article-header.html" . }}
+    <div>{{.Content}}</div>
+  </article>
+  {{ end }}
+  <ul>
+    {{ range .Paginator.Pages }}
+    <li>
+      <article>
+        {{ partial "article-header.html" . }}
+        {{ if $.Site.Params.show_summaries}}
+        <div>{{.Summary}}</div>
+        {{ end }}
+      </article>
+    </li>
+    {{ end }}
+  </ul>
+</section>
+
+<footer>
+  <nav>
+    <ul>
+      <li><a {{ if .Paginator.HasPrev }}href="{{ .Paginator.Prev.URL }}"{{ end }}>prev</a></li>
+      <li><a {{ if .Paginator.HasNext }}href="{{ .Paginator.Next.URL }}"{{ end }}>next</a></li>
+    </ul>
+  </nav>
+</footer>
+{{ end }}

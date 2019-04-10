@@ -1,0 +1,1 @@
+<nav class="LocalNavBar">{{ partial "localnav-findprevpage.html" . }} {{ if .Parent.URL }}<a href="{{ .Parent.URL | relURL }}">Up</a>{{ else }}Up{{ end }} {{ partial "localnav-findnextpage.html" . }}</nav>

@@ -1,0 +1,49 @@
+{{ partial "head.html" . }}
+<body>
+	{{ partial "header.html" . }}
+	<div class="scrollable_block">
+		<div class="centered_block">
+			<article class="martialpaper_yellowborder">
+				<section class="martialpaper_title1">
+					<span>{{ .Site.Title }} <span class="martialpaper_yellow"> {{ .Site.Params.siteclass }}</span></span>
+				</section>
+				<section class="martialpaper_tagline">
+					<span>{{ .Site.Params.tagline }}</span>
+				</section>
+				{{ range where .Data.Pages ".Params.timeless" "indexintro" }}
+					{{ if eq .Title "indexintro" }}
+					<section id="indexintro">
+						{{ .Content }}
+					</section>
+					{{ end }}
+				{{ end }}
+				{{if lt 0 (len (where .Data.Pages ".Params.timeless" "=" "true"))}}
+				<section id="post_index">
+					<span class="martialpaper_title2">Pages:</span>
+					<ul id="page_list">
+					{{ range (where .Data.Pages ".Params.timeless" "=" "true") }}
+						{{ if eq .Params.suppress "false"}}
+							{{ .Render "postsummary" }}
+						{{ end }}
+					{{ end }}
+					</ul>
+				</section>
+				{{end}}
+				{{if lt 0 (len (where .Data.Pages ".Params.timeless" "=" "false"))}}
+				<section id="blog_index">
+					<span class="martialpaper_title2">Posts:</span>
+					<ul id="post_list">
+						{{ range (where .Data.Pages ".Params.timeless" "=" "false") }}
+							{{ if eq .Params.suppress "false"}}
+								{{ .Render "postsummary" }}
+							{{ end }}
+						{{ end }}
+					</ul>
+				</section>
+				{{end}}
+			</article>
+		{{ partial "indexfooter.html" . }}
+		</div>
+	</div>
+</body>
+</html>

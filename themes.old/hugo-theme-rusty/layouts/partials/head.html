@@ -1,0 +1,4 @@
+<title>{{.Title}}</title>
+<link href="https://fonts.googleapis.com/css?family=Merriweather|Merriweather+Sans:300,400|Nunito" rel="stylesheet">
+{{ $styles := resources.Get "scss/style.scss" | toCSS | minify }}
+<link rel="stylesheet" href="{{ $styles.RelPermalink }}">

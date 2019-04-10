@@ -1,0 +1,21 @@
+{{ block "metadata" . }}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <!-- Copyright 2018 Daniel F. Dickinson,
+       Released under the Creative Commons 4.0 BY (Attribution) License -->
+{{ end }}
+{{ block "links" . }}
+    {{ if $.Site.BaseURL }}<base href="{{ $.Site.BaseURL }}">{{ end }}
+    {{ $b := resources.Get "dist/css/base.css" }}
+    {{ $bc := resources.Get "dist/css/base-color.css" }}
+    {{ $bcm := resources.Get "dist/css/base-modern.css" }}
+    {{ $bcmc := resources.Get "dist/css/base-modern-color.css" }}
+    <link rel="stylesheet" href="{{ $b.RelPermalink }}"/>
+    <link rel="stylesheet" href="{{ $bc.RelPermalink }}"/>
+    <link rel="stylesheet" href="{{ $bcm.RelPermalink }}"/>
+    <link rel="stylesheet" href="{{ $bcmc.RelPermalink }}"/>
+{{ end }}
+{{ block "scripts" . }}
+  {{ $js := resources.Get "dist/js/hugo-oldnew-mashup-min.js" }}
+  <script src="{{ $js.RelPermalink }}"></script>
+{{ end }}

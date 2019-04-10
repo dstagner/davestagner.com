@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html{{ with .Site.Params.Prefix }} prefix="{{ range . }}{{ . }} {{ end }}"{{ end }}{{ if .IsHome }} class="home"{{ end }}>
+{{ partial "head.html" . }}
+	<body>
+		<header>
+{{ partial "header.html" . }}
+{{ if .Site.Params.navigationinheader }}
+		<nav>
+{{ partial "menu.html" (dict "node" . "menu" .Site.Menus.main) }}
+{{ partial "nav-local.html" . }}
+		</nav>
+{{ end }}
+		</header>
+{{ if .Site.Params.navigationinheader }}
+{{ else }}
+		<nav>
+{{ partial "menu.html" (dict "node" . "menu" .Site.Menus.main) }}
+{{ partial "nav-local.html" . }}
+		</nav>
+{{ end }}
+{{ block "main" . }}{{ end }}
+		<footer>
+{{ partial "footer.html" . }}
+		</footer>
+{{ partial "foot.html" . }}
+	</body>
+</html>

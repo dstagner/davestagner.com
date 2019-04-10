@@ -1,0 +1,32 @@
+title = "Sofya"
+languageCode = "en-us"
+theme = "sofya"
+baseURL = "https://example.org/"
+PygmentsCodeFences = true
+
+[author]
+  name = "Your Name"
+  homepage = "http://example.org/"
+
+[params]
+  desc = "A Hugo Theme"
+  displaymenu = true
+  twitter = "https://twitter.com/"
+  github = "https://github.com/"
+  quora = "https://www.quora.com/"
+  linkedin = "https://linkedin.com/"
+  stackoverflow = "http://stackoverflow.com/"
+
+[[menu.main]]
+    name = "home"
+    pre = ""
+    weight = -110
+    identifier = "home"
+    url = "/"
+
+[[menu.main]]
+    name = "about"
+    pre = ""
+    weight = -100
+    identifier = "about"
+    url = "/about/"

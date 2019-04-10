@@ -1,0 +1,22 @@
+- id: archives
+  translation: "Архивы"
+- id: categories
+  translation: "Темы"
+- id: category
+  translation: "Тема"
+- id: tags
+  translation: "Теги"
+- id: tag
+  translation: "Тег"
+- id: prev
+  translation: "Пред."
+- id: next
+  translation: "След."
+- id: prevPage
+  translation: "Пред."
+- id: nextPage
+  translation: "След."
+- id: continueReading
+  translation: "Читать далее..."
+- id: of       # "page of pages" in pagination
+  translation: "из"

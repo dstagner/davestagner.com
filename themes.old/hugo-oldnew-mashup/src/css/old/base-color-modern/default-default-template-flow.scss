@@ -1,0 +1,78 @@
+/*
+  The C Shore default colour settings for CSS3 
+  Copyright 2017 Daniel F. Dickinson <thecshore@cshore.theshore.com>
+*/
+
+//  This file is free software; you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation; either version 2 of the License, or
+//  (at your option) any later version.
+
+//  This file is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+
+//  You should have received a copy of the GNU General Public License along
+//  with this file, if not, write to the Free Software Foundation,
+//  Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+// Contains the default colour and font definitions for the default template
+//   are CSS3+ specific (e.g. with media selectors)
+
+//  For different colour and font definitions used to enhance
+//  accessibility, see high_contrast, large_print, and large_font, and larger
+// CSS files
+@import "flexbox-mixin";
+
+@media screen {
+  DIV#section-subtitle, DIV#section-visual-id, DIV#section-necromancy-notice {
+    border-radius: 4px;
+    margin-left: .2em;
+    margin-right: .2em;
+    border: 0;
+    box-shadow: 4px 4px 2px #88aadd;
+    border-color: #88aadd;
+    margin-bottom: 0;
+  }
+
+  DIV#section-nav-menubar > UL {
+    border: 0;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+  }
+
+  DIV#section-nav-menubar > UL UL {
+    border: 0;
+    border-radius: 4px;
+    box-shadow: 4px 4px 2px #88aadd;
+  }
+
+  DIV#section-nav-menubar > UL {
+    margin-top: .2em;
+    margin-left: .2em;
+    margin-right: .2em;
+  }
+
+  DIV#section-nav-menubar UL LI {
+    border: 0;
+    border-radius: 4px;
+    box-shadow: 4px 4px 2px #88aadd;
+  }
+
+  DIV#section-nav-menubar UL LI A {
+    border: 0;
+    border-radius: 4px;
+    box-shadow: 4px 4px 2px #88aadd;
+  }
+
+  DIV#section-nav-menubar {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 56em) {
+}

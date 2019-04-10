@@ -1,0 +1,14 @@
+{{ define "main" }}
+                    <section id="main" class="wrapper">
+                        <div class="inner">
+                            <h1 class="major">{{ i18n "tag" }}</h1>
+                                <h2>{{ .Title }}</h2>
+                                    <ul>
+                                        {{ range .Data.Pages }}
+                                        <li><a href="{{ .Permalink}}">{{ .LinkTitle }}</a></li>
+                                        {{ end }}
+                                    </ul>
+                    
+                        </div>
+                    </section>
+{{ end }}

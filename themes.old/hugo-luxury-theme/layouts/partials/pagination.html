@@ -1,0 +1,15 @@
+                    {{ if or (.Prev) (.Next) }}
+                    <section class="wrapper">
+                        <div class="inner">
+                            <hr>
+                                <ul class="actions align-center">
+                                    {{if .PrevInSection}}
+                                    <li><a href="{{ .PrevInSection.Permalink }}" class="button">{{ i18n "prev" }}</a></li>
+                                    {{ end }}
+                                    {{if .NextInSection}}
+                                    <li><a href="{{ .NextInSection.Permalink }}" class="button">{{ i18n "next" }}</a></li>
+                                    {{ end }}
+                                </ul>
+                        </div>
+                    </section>
+                    {{ end }}

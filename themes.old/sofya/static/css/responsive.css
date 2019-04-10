@@ -1,0 +1,40 @@
+@media (min-width: 220px) {
+
+  .site-header {
+    margin: 0 auto;
+  }
+
+  .site-header,
+  .site-header ul {
+    display: -webkit-box;
+    display: -moz-box;
+    display: flex;
+  }
+
+  .site-header {
+    -moz-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    align-items: center;
+  }
+
+}
+
+@media (min-width: 660px) {
+
+  .site-header {
+    justify-content: space-between;
+    margin-bottom: 32px;
+    -moz-flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+  }
+
+  .description {
+    text-align: left;
+    -moz-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+
+}

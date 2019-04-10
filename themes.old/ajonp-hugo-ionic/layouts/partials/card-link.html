@@ -1,0 +1,19 @@
+  <ion-card style="max-width: 400px;cursor:pointer" class="card-link" onclick="location.href='{{ .Permalink }}'">
+    <ion-item>
+      <ion-label color="dark">
+        <p
+          style="text-overflow: ellipsis;white-space: nowrap;overflow: hidden;font-weight: bold;"
+        >
+          {{.Title}}
+        </p>
+      </ion-label>
+    </ion-item>
+    <ion-card-content>
+      <p style="text-overflow: ellipsis;white-space: nowrap;overflow: hidden;">
+        {{ .Params.description }}
+      </p>
+    </ion-card-content>
+    {{ if isset .Params "images" }} {{ range first 1 .Params.images }}
+    <ion-img src="{{ . | absURL }}" alt="Hero Image"></ion-img>
+    {{ end }} {{ end }}
+  </ion-card>

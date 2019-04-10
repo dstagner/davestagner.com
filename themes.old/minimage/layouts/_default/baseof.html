@@ -1,0 +1,14 @@
+{{ partial "head" . }}
+
+<body>
+  {{ partial "header" . }}
+
+  <main class="c-main-content">
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  {{ partial "footer" . }}
+
+  <script src="{{ "js/application.js" | absURL }}"></script>
+</body>
+</html>

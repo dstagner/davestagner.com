@@ -1,0 +1,30 @@
+baseURL = "https://marcanuy.github.io/hugotube"
+languageCode = "en-us"
+title = "HugoTube Site"
+theme = "hugotube"
+
+# Build robots.txt file
+enableRobotsTXT = true
+
+googleAnalytics = "UA-123-45"
+disqusShortname = "hugotube"
+
+[Social]
+# facebook        = "marcanuy"
+# facebook_admin  = "12345"  # This needs to be a page admin to get domain insights
+twitter         = "marcanuy"
+
+# Theme variables
+#
+[params]
+  brand = "HugoTube"
+  
+  # Google page level ads
+  googleAdClient = "ca-pub-1234567890"
+  googleSiteVerification = "jXQVtt7ISFtvOvNUYoAQ0NiOaaQMWzSwoV2_FIqr2W4"
+  bingSiteVerification = "453BB779294406F41BD202E3E24FFE55"
+  yandexSiteVerification = "44f8600b265eb2a3"
+
+  # Render Share buttons static or with javascript
+  shareButtonsType = "static" #<static|javascript>
+

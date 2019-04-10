@@ -1,0 +1,26 @@
+# Config for using theme as Hugo website
+
+BaseURL = 'https://example.com'
+languageCode = 'en-ca'
+languageLang = 'en'
+title = 'CShore OldNew Mashup Theme Test Site'
+enableGitInfo = 'true'
+theme = 'oldnew-mashup'
+pygmentsUseClasses = true
+pygmentsCodeFences = true
+
+# RSS, categories and tags disabled for an easy start
+# See configuration options for more details:
+# https://gohugo.io/getting-started/configuration/#toml-configuration
+disableKinds = ['RSS', 'taxonomy', 'taxonomyTerm']
+
+[params]
+  siteid = 'OldNew Theme'
+  license = 'CC-BY-4.0'
+  copyright = '2018 Daniel F. Dickinson'
+  GitHubRepo = 'cshoredaniel/hugo-oldnew-mashup'
+  pygmentsUsesClasses = true
+  pygmentsCodeFences = true
+
+[frontmatter]
+lastmod = ["lastmod",":git","date","publishDate"]

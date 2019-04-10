@@ -1,0 +1,15 @@
+{{ if .Site.Params.authorCard }}
+<div class="author-card" itemscope itemprop="author" itemtype="https://schema.org/Person">
+    <div class="author-dp">
+        <img itemprop='image' src="{{ .Site.Params.avatar }}" alt=".Site.Param.name" />
+    </div>
+    <div class="author-bio">
+        <h4 class="author-title">
+         About <span itemprop="name"></span>
+        </h4>
+        <div class="author-description" itemprop="description">
+        I'm a web developer, templates designer, and Minimalist.
+        </div>
+    </div>
+</div>
+{{ end}}

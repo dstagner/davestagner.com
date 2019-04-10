@@ -1,0 +1,21 @@
+# theme.toml template for a Hugo theme
+# See https://github.com/gohugoio/hugoThemes#themetoml for an example
+
+name = "Appyness"
+license = "MIT"
+licenselink = "https://github.com/uicardiodev/hugo-appyness/blob/master/LICENSE"
+description = "Appyness is an app showcase theme, you can list all the app features with screenshots using colored slides. It supports all the features required for an app showcase website."
+homepage = "https://uicard.io/products/hugo-appyness/"
+tags = ["app","showcase","disqus","google analytics","uicardio","playstore","appstore","blog","changelog","minimal","responsive"]
+features = ["disqus","google analytics", "app showcase"]
+min_version = "0.41"
+
+[author]
+  name = "UICardio"
+  homepage = "https://uicard.io"
+
+# If porting an existing theme
+[original]
+  name = ""
+  homepage = ""
+  repo = ""

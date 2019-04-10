@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+{{ "<!--" | safeHTML}}
+	Highlights by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+{{ "-->" | safeHTML }}
+<html>
+	<head>
+		{{ partial "head.html" . }}
+	</head>
+	<body>
+		{{ $list := .Site.Params.block }}
+		{{ partial "hero.html" (dict "block" .Site.Params.hero "params" $.Site.Params "next" (index $list 0)) }}
+		{{ range $index, $element := $list }}
+			{{ $last := eq $index (sub (len $list) 1) }}
+			{{ if and $.Site.Params.footer.enable $last }}
+				{{"<!-- Footer -->" | safeHTML}}
+				<section id="footer">
+			{{ end }}
+			{{ if $last }}
+				{{ partial (print $element.type ".html") (dict "block" $element "params" $.Site.Params) }}
+			{{ else }}
+				{{ partial (print $element.type ".html") (dict "block" $element "params" $.Site.Params "next" (index $list (add $index 1))) }}
+			{{ end }}
+			{{ if and $.Site.Params.footer.enable $last }}
+					{{ if $.Site.Params.footer.social_list.enable }}
+						{{ partial "footer-social.html" $.Site.Params.footer }}
+					{{ end }}
+				</section>
+			{{ end }}
+		{{ end }}
+
+		{{ partial "scripts.html" . }}
+		{{- partial "footer_custom.html" . }}
+	</body>
+</html>

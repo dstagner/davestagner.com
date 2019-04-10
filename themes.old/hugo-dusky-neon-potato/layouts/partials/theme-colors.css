@@ -1,0 +1,278 @@
+/* generic table stuff */
+table, th, td {
+  border: 1px solid {{ .Param "colors.table-border" | default "#008B8B" }};
+}
+
+th {
+  background: {{ .Param "colors.th-bg" | default "#3B0072" }};
+  background-color: {{ .Param "colors.th-bg" | default "#3B0072" }};
+  color: {{ .Param "colors.th-fg" | default "#FF040C" }};
+}
+
+/* generic headers */
+h1{
+  color: {{ .Param "colors.h1" | default "#FF00FF" }};
+  text-decoration: {{ .Param "colors.h1-decoration" | default "none" }};
+}
+h2{
+  color: {{ .Param "colors.h2" | default "#DA70D6" }};
+  text-decoration: {{ .Param "colors.h2-decoration" | default "none" }};
+}
+h3{
+  color: {{ .Param "colors.h3" | default "#EE82EE" }};
+  text-decoration: {{ .Param "colors.h3-decoration" | default "none" }};
+}
+h4{
+  color: {{ .Param "colors.h4" | default "#8B008B" }};
+  text-decoration: {{ .Param "colors.h4-decoration" | default "none" }};
+}
+h5{
+  color: {{ .Param "colors.h5" | default "#9932CC" }};
+  text-decoration: {{ .Param "colors.h5-decoration" | default "none" }};
+}
+h6{
+  color: {{ .Param "colors.h6" | default "#800080" }};
+  text-decoration: {{ .Param "colors.h6-decoration" | default "none" }};
+}
+
+/* Changes */
+#main{
+    border-radius: 0.15%;
+    padding: 15px 20px;
+    background: {{ .Param "colors.background" | default "#101010" }};
+}
+
+.p-title__link {
+    color: {{ .Param "colors.main" | default "#FF1493" }};
+}
+
+.p-title__link:hover {
+    color: {{ .Param "colors.text" | default "#66FF00" }};
+}
+
+/* Base style */
+
+body {
+    color: {{ .Param "colors.text" | default "#66FF00" }};
+    background: {{ .Param "colors.background" | default "#101010" }};;
+    line-height: 1.57
+    font-size: 1.0rem;
+    font-family: -apple-system, BlinkMacSystemFont, YakuHanJP, Hiragino Kaku Gothic ProN, Meiryo, sans-serif;
+}
+
+a {
+    color: {{ .Param "colors.text" | default "#66FF00" }};
+    text-decoration: {{ .Param "colors.a-decoration" | default "underline" }};
+}
+
+a:hover {
+    color: {{ .Param "colors.main" | default "#FF1493" }};
+}
+
+pre {
+    display: block;
+    padding: 12px;
+    border-radius: 3px;
+    background-color: {{ .Param "colors.background" | default "#101010" }};
+    font-size: 1.2rem;
+    word-wrap: break-word;
+    overflow: auto
+}
+
+code {
+    line-height: 1.8;
+    font-size: 1.4rem
+    background: {{ .Param "colors.code-quote-bg" | default "#100110"}};
+}
+
+blockquote {
+    margin: 0;
+    padding: 8px 12px;
+    border-left: 3px solid {{ .Param "colors.text" | default "#66FF00" }}
+    background: {{ .Param "colors.code-quote-bg" | default "#100100"}};
+}
+
+.c-links a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid;
+    border-color: #555;
+    border-radius: 50%;
+    color: {{ .Param "colors.main" | default "#FF1493" }};
+    transition: .2s
+}
+
+.c-links a:hover {
+    background: {{ .Param "colors.background" | default "#101010" }};
+    color: {{ .Param "colors.main" | default "#FF1493" }};
+}
+
+.c-links__icon {
+    width: 16px;
+    height: 16px;
+    fill: #ccc;
+}
+
+.c-article__title a {
+    color: {{ .Param "colors.main" | default "#FF1493" }};
+}
+
+.c-article__title a:hover {
+    color: {{ .Param "colors.text" | default "#66FF00" }};
+}
+
+.c-article__summary {
+    font-size: 1.4rem;
+    color: {{ .Param "colors.text" | default "#66FF00" }};
+    line-height: 1.57
+}
+
+.c-tag {
+    display: inline-block;
+    margin: 8px 6px 0 0;
+    padding: 4px;
+    font-size: 1.6rem;
+    color: {{ .Param "colors.ctag" | default "#FF00FF" }};
+}
+
+.c-tag:hover {
+    background: {{ .Param "colors.ctag-hover-bg" | default "#101010" }};
+    color: {{ .Param "colors.ctag-hover-fg" | default "#66FF00" }};
+}
+
+.c-pagination a:hover {
+    background: {{ .Param "colors.background" | default "#101010" }};
+}
+
+.p-tag-title {
+    display: inline-block;
+    margin: 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid currentColor;
+    color: {{ .Param "colors.p-tag-title" | default "#FF1493" }};;
+    font-size: 2.4rem
+}
+
+/* Menu styles - change */
+
+.p-menu {
+    width: 100%;
+    background: #000;
+    padding-top: 12px;
+    padding-bottom: 14px;
+    margin-bottom: 4rem;
+    display: inline-block;
+    /* NOTE: should make this its own thing, most likely */
+    border-left: 1rem solid {{ .Param "colors.background" | default "#101010" }};
+}
+
+.p-menu__parent span {
+    color: {{ .Param "colors.text" | default "#66FF00" }};
+}
+
+.p-author:before {
+    content: "* * *";
+    position: absolute;
+    top: -30px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    font-size: 1.4rem;
+    color: {{ .Param "colors.text" | default "#66FF00" }};
+}
+
+.p-screen-reader-text:hover,
+.p-screen-reader-text:active,
+.p-screen-reader-text:focus {
+    background-color: {{ .Param "colors.background" | default "#101010" }};;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, .6);
+    clip: auto!important;
+    color: {{ .Param "colors.text" | default "#66FF00" }};
+    display: block;
+    font-size: 14px;
+    font-size: .875rem;
+    font-weight: 700;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000
+}
+
+.p-related__item a {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 8px;
+    background-size: cover;
+    background-color: {{ .Param "colors.related-bg" | default "#101010" }};
+    color: {{ .Param "colors.related-fg" | default "#66FF00" }};
+    font-weight: 400;
+    font-family: Open Sans, sans-serif
+}
+
+.p-related__item a:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .3);
+    transition: .1s
+}
+
+.p-related__item a:hover:before {
+    background: rgba(0, 0, 0, .6)
+}
+
+/* Slick css */
+
+.slick-arrow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 28px;
+    height: 28px;
+    border: none;
+    border-radius: 50%;
+    background: {{ .Param "colors.background" | default "#101010" }};
+}
+
+.slick-arrow:after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    width: 5px;
+    height: 5px;
+    border: solid {{ .Param "colors.text" | default "#66FF00" }};
+}

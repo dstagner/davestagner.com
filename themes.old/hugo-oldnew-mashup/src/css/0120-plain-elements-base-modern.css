@@ -1,0 +1,69 @@
+/*! Copyright 2007-2009,2017-2018 Daniel F. Dickinson (<cshored@thechsore.com>)
+ *  Released under the Creative Commons BY (Attribution) 4.0 License
+ */
+
+/*  The C Shore Base Elements Styling when Media Queries are available */
+
+@import "custom-properties.css";
+
+@media screen or print {
+  /* Set the base font size (when styling Javascript is available it */
+  /* will override this value). */
+  .BaseFontSize {
+    font-size: var(--BaseFontSize, var(--baseRWDFontSize));
+  }
+
+  html {
+    font-size: var(--BaseFontSize, var(--baseRWDFontSize));
+  }
+}
+
+@media screen and (min-width: 28em) {
+  .BaseFontSize {
+    font-size: 20px;
+  }
+
+  html {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 36em) {
+  .BaseFontSize {
+    font-size: 22px;
+  }
+
+  html {
+    font-size: 22px;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .BaseFontSize {
+    font-size: 24px;
+  }
+
+  html {
+    font-size: 24px;
+  }
+}
+
+@media screen and (min-width: 56em) {
+  .BaseFontSize {
+    font-size: 26px;
+  }
+
+  html {
+    font-size: 26px;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .BaseFontSize {
+    font-size: 29px;
+  }
+
+  html {
+    font-size: 29px;
+  }
+}

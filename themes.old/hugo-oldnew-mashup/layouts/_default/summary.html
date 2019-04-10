@@ -1,0 +1,14 @@
+<article class="PageSummary">
+<!-- Copyright 2018 Daniel F. Dickinson
+     Released under the Creative Commons BY (Attribution) 4.0 License) -->
+  <header class="SummaryHeader">
+    <h2><a href='{{ .Permalink }}'>{{ .Title }}</a> </h2>
+    <div class="PageMetadata">{{ .Lastmod.Format "Jan 2, 2006 15:04 MST" }} - {{ .FuzzyWordCount }} Words </div>
+  </header>
+  {{ .Summary }}
+  <footer class="SummaryFooter">
+  {{ if .Truncated }}
+    <a href='{{ .Permalink }}'><nobr>more...</nobr></a>
+  {{ end }}
+  </footer>
+</article>

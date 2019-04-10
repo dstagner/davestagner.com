@@ -1,0 +1,14 @@
+                    <section class="wrapper">
+                        <div class="inner">
+                            <hr>
+                            <ul class="actions align-center">
+                            {{if .Paginator.HasPrev }}
+                                <li><a href="{{ .Paginator.Prev.URL }}" class="button">{{ i18n "prevPage" }}</a></li>
+                            {{ end }}
+                                <li><span class="button disabled">{{ .Paginator.PageNumber }} {{ i18n "of" }} {{ .Paginator.TotalPages }}</span></li>
+                            {{ if .Paginator.HasNext }}
+                                <li><a href="{{ .Paginator.Next.URL }}" class="button">{{ i18n "nextPage" }}</a></li>
+                            {{ end }}
+                            </ul>
+                        </div>
+                    </section>

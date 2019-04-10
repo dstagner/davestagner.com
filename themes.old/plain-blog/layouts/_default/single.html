@@ -1,0 +1,31 @@
+{{ partial "header.html" . }}
+<div class="pure-g">
+  <div class="pure-u-1-24 pure-u-lg-1-12 pure-u-xl-1-5"></div>
+  <div class="pure-u-11-12 pure-u-lg-5-6 pure-u-xl-3-5" id="main">
+  	<main>
+  	  <header>
+  	    <h1>{{ if .Draft }}DRAFT:{{ end }}{{ .Title }}</h1>
+        <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}" class="post-list timeago">{{ .Date.Format "2006-01-02" }}</time>
+        {{ partial "list_taxonomies.html" . }}
+  	  </header>
+
+  	  {{ if .Description }}
+  	    <p id="description">{{ .Description }}</p>
+  	  {{ end }}
+
+
+      {{ if .Params.show_table_of_contents }}
+        <aside id="toc">
+          {{ .TableOfContents }}
+        </aside>
+      {{ end }}
+
+  	  {{ if .Content }}
+        {{ .Content }}
+      {{ end }}
+
+    </main>
+  </div>
+  <div class="pure-u-1-24 pure-u-lg-1-12 pure-u-xl-1-5"></div>
+</div>
+{{ partial "footer.html" . }}

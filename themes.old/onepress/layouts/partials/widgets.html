@@ -1,0 +1,29 @@
+<div class="widgets">
+      
+  <section itemscope itemtype="https://schema.org/Person" class="widget socials">
+    <h2 class="widget-title">Socials</h2>
+    <ul>
+        {{ if .Site.Params.facebook }}
+            <li><a href="{{ .Site.Params.facebook }}"><i class="fa fa-facebook"></i></a></li>
+        {{ end }}
+        {{ if .Site.Params.twitter }}
+        <li><a href="{{ .Site.Params.twitter }}"><i class="fa fa-twitter"></i></a></li>
+        {{end}}
+        {{ if .Site.Params.linkedin }}
+        <li><a href="{{ .Site.Params.linkedin }}"><i class="fa fa-linkedin"></i></a></li>
+        {{end}}
+        {{ if .Site.Params.github }}
+        <li><a href="{{ .Site.Params.github }}"><i class="fa fa-github"></i></a></li>
+        {{end}}
+    </ul>
+  </section>
+ 
+  <section class="widget widget-one">
+    <!-- add content here -->
+    <h2 class="widget-title">Widget 2</h2>
+  </section>
+    
+    
+ <!-- You can add multiple widgets section below -->
+
+</div>

@@ -1,0 +1,19 @@
+{{ define "header"}} {{ partial "header" .}} {{ end }} {{ define "main"}}
+<ion-page class="ion-page" main>
+    {{ partial "page-header" . }}
+  <ion-content padding>
+    <ion-list>
+        <ion-list-header>Tags</ion-list-header>
+        <ion-menu-toggle auto-hide="false">
+            {{ range.Data.Pages.ByWeight }}
+          <ion-item button href="{{ .Permalink }}">
+              <ion-icon slot="start" name="pricetag" color="primary"></ion-icon>
+            <ion-label> {{.Title}} </ion-label>
+          </ion-item>
+          {{ end }}
+        </ion-menu-toggle>
+      </ion-list>
+  </ion-content>
+  {{ partial "footer" .}}
+</ion-page>
+{{ end }}

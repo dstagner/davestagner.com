@@ -1,0 +1,36 @@
+{{ define "content" }}
+
+    {{ $logos := .Resources.Match "logos/*" }}
+    {{ if gt (len $logos) 0 }}
+        <ul class="logos-list" aria-hidden="true">
+            {{ range $logos }}
+                {{ if eq .ResourceType "image" }}
+                    {{ $image := .Fit "64x64"  }}
+                    <li>
+                        <figure class="no-photoswipe">
+                            <img class="logo" src="{{ $image.RelPermalink }}" alt="" title="{{ $image.Title }}">
+                        </figure>
+                    </li>
+                {{ end }}
+            {{ end }}
+        </ul>
+    {{ end }}
+
+    {{ with .Content}}
+        <div>
+        {{ . | markdownify }}
+        <hr>
+        </div>
+    {{ end }}
+
+    {{ $images_directory := .Params.images_directory | default "images" }}
+    {{ $images_static := .Params.images_static | default "false" }}
+    {{ $images_copyright := .Params.images_copyright }}
+    {{ $images_params := .Params.images }}
+    {{ partial "gallery.html" (dict "page" . "dir" $images_directory "static" $images_static "images_params" $images_params "images_copyright" $images_copyright) }}
+    {{ partial "load-photoswipe.html" (dict "page" .) }}
+
+{{ end }}
+
+{{ define "lists" }}
+{{ end }}

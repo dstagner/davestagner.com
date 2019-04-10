@@ -1,0 +1,8 @@
+	<footer>
+		<ul class="martialpaper_hiddenbullets">
+			{{ if .Site.Params.copyrightstatement }}<li>{{ .Site.Params.copyrightstatement }}</li>{{ end }}
+			<li>Last Modified: {{ if eq .Params.martialpaperlastmod "YYYYMMDD"}} {{ .Date.Format "20060102" }} {{ else }} {{ .Params.martialpaperlastmod }}</li> {{ end }}
+		</ul>
+	</footer>
+</body>
+</html>

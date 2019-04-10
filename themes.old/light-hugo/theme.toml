@@ -1,0 +1,11 @@
+name = "light-hugo"
+license = "MPL2"
+licenselink = "https://github.com/tblyler/light-hugo/blob/master/LICENSE"
+description = "CSS and HTML only blog/pages focused on content."
+homepage = "https://github.com/tblyler/light-hugo"
+tags = ["Responsive", "nojs", "Minimal", "normalize", "Light", "White"]
+features = ["blog", "pages"]
+
+[author]
+  name = "Tony Blyler"
+  homepage = "https://tonyblyler.com"

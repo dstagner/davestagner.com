@@ -1,0 +1,15 @@
+                                <ul class="icons meta">
+                                    <li moment><strong><i class="fa fa-calendar"></i> </strong>{{ .Date.Format "2006-01-02" }}</li>
+                                {{ if isset .Params "categories" }}
+                                {{ $baseUrl := .Site.BaseURL }}
+                                {{ range .Params.categories }}
+                                    <li><strong><i class="fa fa-folder"></i> </strong><a href="{{ $baseUrl }}categories/{{ . | urlize }}">{{ . }}</a></li>
+                                {{ end }}
+                                {{ end }}
+                                {{ if isset .Params "tags" }}
+                                {{ $baseUrl := .Site.BaseURL }}
+                                {{ range .Params.tags }}
+                                    <li><strong><i class="fa fa-tags"></i> </strong><a href="{{ $baseUrl }}tags/{{ . | urlize }}">{{ . }}</a></li>
+                                {{ end }}
+                                {{ end }}
+                                </ul>

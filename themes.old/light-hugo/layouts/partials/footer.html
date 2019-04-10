@@ -1,0 +1,20 @@
+		<div class="links">
+			<a href="/">Home</a>
+			{{ range first 1 (where .Site.Pages "Type" "post") }}
+				<a href="/post/">Archive</a>
+			{{ end }}
+			{{ range where .Site.Pages "Section" "pages" }}
+				{{ if .IsPage }}
+					<a href="{{ .RelPermalink }}">{{ .Title }}</a>
+				{{ end }}
+			{{ end }}
+			<a href="#top">Top</a>
+		</div>
+		{{ partial "foot.html" . }}
+		{{ if .Site.Copyright }}
+		<p id="copyright">
+			{{ .Site.Copyright }}
+		</p>
+		{{ end }}
+	</body>
+</html>

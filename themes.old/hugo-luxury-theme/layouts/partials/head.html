@@ -1,0 +1,24 @@
+    <head>
+        <title>{{ block "title" . }}{{ .Site.Title }} {{ with .Title }} | {{ . }}{{ end }}{{ end }}</title>
+
+        <meta name="author" content="{{ .Site.Params.author }}">
+        <meta name="description" content="{{ .Site.Params.description }}">
+        <meta name="keywords" content="{{ .Site.Params.keywords }}">
+        
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {{ "<!--[if lte IE 8]>" | safeHTML }}
+        <script src="{{ .Site.BaseURL }}js/ie/html5shiv.js"></script>
+        {{ "<![endif]-->" | safeHTML }}
+        <link rel="stylesheet" href="{{ .Site.BaseURL }}css/main.css" />
+        {{ "<!--[if lte IE 9]>" | safeHTML }}
+        <link rel="stylesheet" href="{{ .Site.BaseURL }}css/ie9.css" />
+        {{ "<![endif]-->" | safeHTML }}
+        {{ "<!--[if lte IE 8]>" | safeHTML }}
+        <link rel="stylesheet" href="{{ .Site.BaseURL }}css/ie8.css" />
+        {{ "<![endif]-->" | safeHTML }}
+        
+        {{ range .Site.Params.custom_css }}
+        <link rel="stylesheet" href="{{ . | relURL }}">
+        {{ end }}
+    </head>

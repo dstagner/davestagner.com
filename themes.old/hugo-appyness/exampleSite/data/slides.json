@@ -1,0 +1,20 @@
+[
+  {
+    "heading" : "Suspendisse et odio ut diam",
+    "description" : "Pellentesque ut maximus turpis. Fusce ut fringilla nisi, ut interdum purus. Integer eu mauris at odio interdum molestie a a lectus.",
+    "backgroundColor" : "blue",
+    "screenshot" : "spotify.png"
+  },
+  {
+    "heading" : "Vivamus semper consectetur mattis.",
+    "description" : "Duis facilisis sapien id justo malesuada, eu luctus mauris fringilla. Nam at ipsum diam. ",
+    "backgroundColor" : "orange",
+    "screenshot" : "appstore.png"
+  },
+  {
+    "heading" : "Vivamus semper consectetur mattis.",
+    "description" : "Duis facilisis sapien id justo malesuada, eu luctus mauris fringilla. Nam at ipsum diam. ",
+    "backgroundColor" : "green",
+    "screenshot" : "calc.png"
+  }
+]

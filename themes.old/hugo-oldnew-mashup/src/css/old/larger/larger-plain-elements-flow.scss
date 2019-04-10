@@ -1,0 +1,90 @@
+/*
+  The C Shore default colour settings
+  Copyright 2007-2009,2017 Daniel F. Dickinson <thecshore@cshore.theshore.com>
+*/
+
+//  This file is free software; you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation; either version 2 of the License, or
+//  (at your option) any later version.
+
+//  This file is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+
+//  You should have received a copy of the GNU General Public License along
+//  with this file, if not, write to the Free Software Foundation,
+//  Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+// Contains the default colour and font definitions for plain elements
+// (no class or id specifiers) that are CSS3+ specific (e.g.
+// media selectors)
+
+// For different colour and font definitions used to enhance
+// accessibility, see high_contrast, large_print, and large_font, and larger
+// CSS files
+
+html {
+  font-size: 26px;
+}
+
+@media screen and (min-width: 480px) {
+  html {
+    font-size: 27px;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  html {
+    font-size: 28px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  html {
+    font-size: 29px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  html {
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  html {
+    font-size: 31px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  html {
+    font-size: 34px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  html {
+    font-size: 36px;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  html {
+    font-size: 39px;
+  }
+}
+
+@media screen and (min-width: 2280px) {
+  html {
+    font-size: 42px;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  html {
+    font-size: 48px;
+  }
+}

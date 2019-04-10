@@ -1,0 +1,12 @@
+name = "Hugo Luxury Theme"
+license = "MIT"
+licenselink = "https://github.com/aerohub/hugo-luxury-theme/blob/master/LICENSE.md"
+description = "Just a blog theme for Hugo. Looking rich but without any cool modern features as everything luxurious is."
+homepage = "https://github.com/aerohub/hugo-luxury-theme"
+tags = ["blog", "simple", "minimalist", "personal", "creative"]
+features = ["disqus", "google analytics", "responsive"]
+min_version = "0.31.1"
+
+[author]
+  name = "Pavel Kanyshev"
+  homepage = "https://github.com/aerohub"

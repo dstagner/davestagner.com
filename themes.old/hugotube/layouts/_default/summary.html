@@ -1,0 +1,19 @@
+<div class="col-sm">
+    <a href="{{ .RelPermalink }}">
+	{{ if .Params.youtube_id }}
+	<img class="d-flex img-fluid"
+	     src="https://img.youtube.com/vi/{{.Params.youtube_id}}/hqdefault.jpg"
+	     alt="{{ .Title }}">
+	{{ else }}
+	<img class="d-flex img-fluid"
+	     src="https://img.youtube.com/vi/{{.Params.image}}/hqdefault.jpg"
+	     alt="{{ .Title }}">
+	{{ end }}
+
+	<p class="my-1 text-dark title"><strong>{{ .LinkTitle}}</strong></p>
+	{{ with .Params.author }}
+	<p><a href="/author/{{ . | urlize }}/" class="text-muted nodecor">{{ . }}</a></p>
+	{{ end }}
+
+    </a>
+</div>

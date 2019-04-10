@@ -1,0 +1,58 @@
+{{- $config := .Site.Data.config -}}
+<!doctype html>
+<html lang="en">
+  <head>
+    <style>
+    @font-face {
+      font-family: "c-black";
+      src: url("{{.Site.BaseURL}}fonts/circular-std/CircularStd-Black.woff") format('woff');
+      font-weight: 700;
+      font-display: fallback;
+    }
+
+    @font-face {
+      font-family: "c-bold";
+      src: url("{{.Site.BaseURL}}fonts/circular-std/CircularStd-Bold.woff") format('woff');
+      font-weight: 600;
+      font-display: fallback;
+    }
+
+    @font-face {
+      font-family: "c-book";
+      src: url("{{.Site.BaseURL}}fonts/circular-std/CircularStd-Book.woff") format('woff');
+      font-weight: 600;
+      font-display: fallback;
+    }
+
+    @font-face {
+      font-family: "c-mi";
+      src: url("{{.Site.BaseURL}}fonts/circular-std/CircularStd-MediumItalic.woff") format('woff');
+      font-weight: 500;
+      font-display: fallback;
+    }  
+    </style>
+    <title>{{ .Title }} - {{$config.name}}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="{{ $config.themeColor }}">
+    <link rel="icon" type="image/x-icon" href="{{.Site.BaseURL}}img/favicon.png">
+    {{- $sass := resources.Get "/scss/main.scss" -}}
+    {{- $style := $sass | resources.ToCSS | resources.Minify -}}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github-gist.min.css">
+    <!-- Meta Tags -->
+    <meta name="description" content="{{- with .Description -}}{{- . -}}{{- else -}}{{- if .IsPage -}}{{- .Summary -}}{{- else }}{{- with .Site.Params.description -}}{{- . -}}{{- end -}}{{- end -}}{{- end -}}">
+    <!-- Open Graph -->
+    <meta property="og:title" content="{{ .Title }} - {{$config.name}}" />
+    <meta property="og:description" content="{{- with .Description -}}{{- . -}}{{- else -}}{{- if .IsPage -}}{{- .Summary -}}{{- else }}{{- with .Site.Params.description -}}{{- . -}}{{- end -}}{{- end -}}{{- end -}}" />
+    <meta property="og:url" content="{{ .Permalink }}" />
+    <!-- Twitter Card -->
+    <meta name=”twitter:card” content="summary_large_image">
+    <meta name=”twitter:title” content="{{ .Title }} - {{$config.name}}" />
+    <meta name=”twitter:description” content="{{- with .Description -}}{{- . -}}{{- else -}}{{- if .IsPage -}}{{- .Summary -}}{{- else }}{{- with .Site.Params.description -}}{{- . -}}{{- end -}}{{- end -}}{{- end -}}" />
+    <meta name=”twitter:url” content="{{ .Permalink }}" />
+  </head>
+  <body>
+    
+  

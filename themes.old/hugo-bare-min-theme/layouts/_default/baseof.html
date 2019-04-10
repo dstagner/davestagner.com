@@ -1,0 +1,210 @@
+<!-- User-error checks -->
+{{- $err_common_msg := "\n Fix this issue *before* you start debugging the errors that follow.\n It is possible that those errors will go away once you fix this issue.\n" -}}
+{{- if (and .Site.Params.source.md_dir (not .Site.Params.source.url)) -}}
+    {{- errorf "You set .Site.Params.source.md_dir, but forgot to set .Site.Params.source.url!%s" $err_common_msg -}}
+{{- end -}}
+{{- if (and .Site.Params.source.org_dir (not .Site.Params.source.url)) -}}
+    {{- errorf "You set .Site.Params.source.org_dir, but forgot to set .Site.Params.source.url!%s" $err_common_msg -}}
+{{- end -}}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+    <head>
+        <link href="https://gmpg.org/xfn/11" rel="profile">
+        <meta charset="utf-8">
+        <!-- Above is a short hand for the below line. -->
+        <!-- http://htmldog.com/guides/html/intermediate/metatags/ -->
+        <!-- <meta http-equiv="content-type" content="text/html; charset=utf-8"> -->
+
+        <!-- Enable responsiveness on mobile devices-->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+
+        <!-- No referrer: https://webbkoll.dataskydd.net/en/ -->
+        <meta name="referrer" content="no-referrer">
+
+        <title>
+            {{ if (eq .Kind "home") }}
+                {{ .Site.Title }}
+            {{ else if (eq .Kind "taxonomy") }}
+                {{ printf "%s ‘%s’ ❚ %s" (.Data.Singular | title) .Data.Term .Site.Title }}
+            {{ else }}
+                {{ printf "%s ❚ %s" .Title .Site.Title }}
+            {{ end }}
+        </title>
+        {{ with .Site.Params.favicon }}
+            {{- . | safeHTML -}}
+        {{ end }}
+        <!-- view-source:http://bettermotherfuckingwebsite.com/ -->
+        <style>
+         body {
+             margin: 40px auto;
+             max-width: 650px;
+             line-height: 1.6;
+             font-size: 18px;
+             color: #444;
+             padding: 0 10px;
+         }
+         h1, h2, h3 {
+             line-height: 1.2;
+         }
+         .masthead-title {
+             font-size: 40px;
+             font-weight: bold;
+         }
+         .masthead-title a {
+             text-decoration: none;
+         }
+         .masthead-body {
+             font-size: 0.8em;
+         }
+         {{ if (not ($.Param "disable_debug")) }}
+             {{ partial "debugprint.css" | safeCSS }}
+         {{ end }}
+         /* Captions */
+         figcaption,
+         .src-block-caption,
+         .table-caption {
+             font-style: italic;
+             text-align: center;
+         }
+         dt {
+             font-weight: bold;
+         }
+         dd {
+             margin-bottom: .5rem;
+         }
+         /* No list bullets in task lists */
+         ul.task-list {
+             list-style-type: none;
+         }
+        </style>
+
+        <!-- Opengraph and Twitter -->
+        {{ partial "opengraph.html" . }}
+        {{ partial "twitter_cards.html" . }}
+
+        {{ range .Site.Params.custom_css }}
+            <link rel="stylesheet" href="{{ . | relURL }}">
+        {{ end }}
+        {{ block "head" . }}{{ end }}
+    </head>
+
+    <body lang="{{ .Site.Language.Lang }}">
+
+        {{ block "top" . }}
+
+        <div style="float: left;">
+            <small>
+                {{ printf `<span style="font-variant: small-caps;">.Kind</span> (<strong>%s</strong>):` .Kind | safeHTML }}
+                {{ printf `<span style="font-variant: small-caps;">.Type</span> (<strong>%s</strong>) /` .Type | safeHTML }}
+                {{ printf `<span style="font-variant: small-caps;">.Layout</span> (<strong>%s</strong>)` .Layout | safeHTML }}
+
+                <br />
+                {{ $bundle_type := "n/a" }}
+                {{ if (eq .File.Path "") }}
+                    {{ $bundle_type = `n/a (regular "list" page)` }}
+                {{ else }}
+                    {{ if (eq .File.BaseFileName "_index") }}
+                        {{ $bundle_type = "branch" }}
+                    {{ else if (eq .File.BaseFileName "index") }}
+                        {{ $bundle_type = "leaf" }}
+                    {{ else }}
+                        {{ $bundle_type = "n/a (regular page)" }}
+                    {{ end }}
+                {{ end }}
+                {{ printf `<span style="font-variant: small-caps;">Bundle</span>: <strong>%s</strong>` $bundle_type | safeHTML }}
+            </small>
+        </div>
+
+        {{ with .Site.Taxonomies }}
+            <div style="float: right;">
+                [
+                {{ $is_first_key := true }}
+                {{ range $key,$val := . }}
+                    {{ with $.Site.GetPage "taxonomyTerm" $key }}
+                        {{ printf `%s <a href="%s">%s</a>` (cond $is_first_key "" "|") .Permalink .Type | safeHTML }}
+                        {{ $is_first_key = false }}
+                    {{ end }}
+                {{ end }}
+                {{ with $.Site.GetPage "page" "search" }}
+                    {{ printf `%s <a href="%s"><strong>%s</strong></a>` "|" .Permalink (.Title | lower) | safeHTML }}
+                {{ end }}
+                ]
+            </div>
+            <div style="clear: both;"></div> <!-- Clear floats -->
+        {{ end }}
+
+        <div class="masthead-title"><a href="/">{{ .Site.Title }}</a></div>
+        <div class="masthead-body">
+            {{ with .Site.Params.intro }}
+                <p>
+                    {{- . | safeHTML -}}
+                </p>
+            {{ end }}
+            {{ with .Site.Params.source }}
+                <p>It is <b>updated automatically after each commit</b> to the <a href="{{ .url }}">
+                    <code>{{ .url | replaceRE "^.*/" "" }}</code> repo</a>.
+                    It was last updated on <i>{{ now.Format "Jan 02, 2006 15:04 MST" }}</i>.
+                </p>
+                <ul>
+                    {{ if .org_dir }}
+                        <li>The <i>actual <b>source</b></i>.. <a href="{{ .url }}/tree/master/{{ .org_dir }}">Org source dir</a></li>
+                        <li>
+                            <ul>
+                                <li>Below Markdown is exported from Org using <code>ox-hugo</code>.</li>
+                            </ul>
+                        </li>
+                    {{ end }}
+                    {{ if .md_dir }}
+                        <li><a href="{{ .url }}/tree/master/{{ .md_dir }}">Markdown source dir</a></li>
+                    {{ end }}
+                </ul>
+            {{ end }}
+            <hr>
+        </div>
+
+        {{ with .GitInfo }} <!-- To enable this, put "enableGitInfo = true" in your site config.toml -->
+            {{ $git := . }}
+            {{ with $.Site.Params.source }}
+                This page was created/modified in commit <a href="{{ .url }}/commit/{{- $git.Hash -}}">
+                {{- $git.AbbreviatedHash -}}</a> "{{ $git.Subject }}" on <b>{{ dateFormat "2006-01-02" $git.AuthorDate }}</b>.
+            {{ end }}
+        {{ end }}
+
+        {{ with .File.Path }}
+            {{ $path := . }}
+            {{ with $.Site.Params.source }}
+                {{ if .md_dir }}
+                    <br />
+                    <div style="float: right;">
+                        ✱ <i>Markdown <a href="{{ .url }}/raw/master/{{ .md_dir }}/{{ $path }}">
+                        source</a> of this page</i>
+                    </div>
+                    <div style="clear: both;"></div> <!-- Clear floats -->
+                {{ end }}
+            {{ end }}
+        {{ end }}
+
+        {{ end }}               <!-- End of "top" block -->
+
+        {{ block "main" . }}{{ end }}
+
+        <hr>
+        <small>This site is generated using the
+            {{ with .Site.Params.source.org_dir }}
+                <a href="https://github.com/kaushalmodi/ox-hugo"><b>ox-hugo</b></a> package for Emacs/Org-mode +
+            {{ end }}
+            <a href="https://github.com/kaushalmodi/hugo-bare-min-theme"><code>hugo-bare-min-theme</code></a> + Hugo <b>{{ .Hugo.Version }}</b>
+            {{ with .Hugo.CommitHash }}
+                (commit
+                {{ . | replaceRE "^[0-9a-f]{7,}" `<a href="https://github.com/gohugoio/hugo/commit/${0}">${0}</a>` | replaceRE ":chroma-([0-9a-f]{7,})" `, using Chroma commit <a href="https://github.com/alecthomas/chroma/commit/${1}">${1}</a>` | safeHTML -}}
+                )
+            {{ end }}.
+        </small>
+        {{ with .Site.Params.footer }}
+            {{- . | safeHTML -}}
+        {{ end }}
+        {{ block "footer" . }}{{ end }}
+    </body>
+</html>
+
+<!-- Reference time used in Go: Mon Jan 2 15:04:05 MST 2006, https://golang.org/pkg/time/#pkg-constants -->

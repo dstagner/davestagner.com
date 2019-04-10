@@ -1,0 +1,26 @@
+<div class="summary">
+  <a
+    class="title is-size-2-desktop is-size-3-tablet is-size-4-mobile"
+    href="{{ .RelPermalink }}">
+  {{ with .Resources.GetMatch "featured-image" }}
+    <figure class="image">
+      <img src="{{ .Permalink }}" alt="{{ .Title }}"/>
+    </figure>
+  {{ end }}
+
+    {{- .Title -}}
+  </a>
+
+  <br>
+  <time class="has-text-weight-light" datetime="{{ .PublishDate.Format "2006-01-02" }}">
+    {{ .PublishDate.Format "Mon Jan 2 2006" }}
+  </time>
+
+  <p class="is-size-5-desktop is-size-5-tablet is-size-6-mobile">
+    {{ .Summary }}
+  </p>
+
+  <p class="is-size-5-desktop is-size-6-tablet is-size-6-mobile">
+    <a class="" href="{{ .RelPermalink }}">Read more…</a>
+  </p>
+</div>

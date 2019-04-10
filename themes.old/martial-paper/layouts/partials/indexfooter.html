@@ -1,0 +1,7 @@
+<footer>
+	<ul class="martialpaper_hiddenbullets">
+		{{ if .Site.Params.copyrightstatement }}<li>{{ .Site.Params.copyrightstatement }}</li>{{ end }}
+		<li>Last Posted: {{range last 1 .Data.Pages.ByDate}}{{.Date.Format "20060102"}}{{end}}</li>
+		<li><a href="http://www.gnuterrypratchett.com/"><img src="GNUTerryPratchett.gif" alt="GNUTerryPratchett"></a></li>
+	</ul>
+</footer>

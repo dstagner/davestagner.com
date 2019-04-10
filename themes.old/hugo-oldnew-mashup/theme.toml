@@ -1,0 +1,14 @@
+# See https://github.com/gohugoio/hugoThemes#themetoml for an example
+
+name = "OldNew Mashup"
+license = "CC-BY-4.0"
+licenselink = "https://github.com/cshoredaniel/hugo-pure-oldnew-mashup/blob/master/LICENSE.md"
+description = "Hugo Theme mixing old school design elements with new-era"
+homepage = "https://hugo-oldnew-mashup.thecshore.com/"
+keywords = ['hugo', 'old-school', 'modern', 'postmodern']
+features = ['blog', 'responsive']
+min_version = "0.51"
+
+[author]
+  name = "Daniel F. Dickinson"
+  homepage = "https://www.thecshore.com"

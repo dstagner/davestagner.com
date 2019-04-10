@@ -1,6 +1,6 @@
 +++
-title: Mutating the immutable
-date: "2017-10-04T19:57:40-05:00"
+title = "Mutating the immutable"
+date =  "2017-10-04T19:57:40-05:00"
 +++
 
 > Which kneecap would you prefer to get shot in?

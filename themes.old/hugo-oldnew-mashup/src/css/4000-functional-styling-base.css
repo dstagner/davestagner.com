@@ -1,0 +1,12 @@
+/*! Copyright 2018 Daniel F. Dickinson <cshored@thecshore.com>
+ * Released under the Creative Commons BY (Attribution) 4.0 License
+ */
+/* The C Shore Styling Elements for specifict functional elements */
+
+/* Remember, for the level of specifity last rule wins, hence
+ *   most important rules are last
+*/
+
+.PageLicenseList {
+    text-align: left;
+}

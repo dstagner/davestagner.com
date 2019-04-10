@@ -1,0 +1,8 @@
+{{ define "main" }}
+		<main class="list">
+{{ range (where (where .Paginator.Pages "Section" .Site.Params.frontpagesection) "Date" "<=" now) }}
+{{ partial "article" (dict "article" . "mode" (default "summary" (default $.Site.Params.listmode $.Site.Params.frontpagemode))) }}
+{{ end }}
+{{ partial "pagination" . }}
+		</main>
+{{ end }}

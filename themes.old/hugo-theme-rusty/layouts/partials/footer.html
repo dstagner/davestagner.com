@@ -1,0 +1,12 @@
+<footer>
+    <p>{{.Site.Title}} &copy; {{ dateFormat "2006" now }}</p>
+    <ul class="links">
+    {{if (isset .Site.Params "twitter_username")}}
+        <li><a href="https://twitter.com/{{.Site.Params.Twitter_Username}}">Twitter</a></li>
+    {{end}}
+
+    {{if (isset .Site.Params "github_username")}}
+        <li><a href="https://github.com/{{.Site.Params.Github_Username}}">Github</a></li>
+    {{end}}
+    </ul>
+</footer>

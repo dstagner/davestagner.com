@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="{{ $.Site.Language.Lang }}">
+<!-- Copyright 2018 Daniel F. Dickinson <cshored@thecshore.com
+     Released under the Create Commons BY (Attribution) 4.0 License -->
+  <head>
+    <title>{{ block "title" . }}
+      {{ .Site.Title }}
+    {{ end }}</title>
+    {{ block "head" . }}
+       {{ partial "head-theme" . }}
+       {{ partial "head-site" . }}
+    {{ end }}
+  </head>
+  {{ block "bodytag" .}}
+  <body>
+  {{ end }}
+  {{ block "header" . }}
+    <div class="DefaultBodyWrapper">
+      {{ partial "header" . }}
+  {{ end }}
+  {{ block "main" . }}
+        <main class="Main">
+          <article class="MainContent">
+            {{ .Content }}
+          </article>
+          {{ partial "sidebar-right" . }}
+        </main>
+  {{ end }}
+  {{ block "forkme" . }}
+    {{ partial "forkmeongithub" . }}
+  {{ end }}
+  {{ block "footer" . }}
+    {{ partial "footer" . }}
+    </div>
+  {{ end }}
+  </body>
+</html>

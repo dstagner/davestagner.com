@@ -1,0 +1,29 @@
+  <div class="landingpage">
+    <div class="row">
+      <div class="five columns">
+        <section id="avatar">
+          <img class="avatar" src="{{.Site.Params.avatar}}">
+        </section>
+      </div>
+      <div class="seven columns">
+      <div class="autocenter">
+        <section id="bio">
+          <h3>{{ .Site.Params.author }}</h3>
+          <p class="reset-margin">{{ .Site.Params.bio | markdownify }}</p>
+        </section>
+        <section id="contact">
+          <div class="icons">
+          <h3>
+            {{ with .Site.Params.email }}<a class="icon" href="mailto:{{ . }}">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+            </a>{{ end }}
+            {{ range $contact_key,  $contact_link := .Site.Params.contact }}<a class="icon" href="{{ $contact_link }}" target="_blank">
+              <i class="fab fa-{{ $contact_key }}" aria-hidden="true"></i>
+            </a>{{ end }}
+          </h3>
+          </div>
+        </section>
+      </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,13 @@
+<div class="container">
+	<div class="row">
+		<div class="column">
+			<nav class="primary-nav" role="navigation">
+				<ul>
+					{{ range .Site.Params.navigation }}
+					<li><a href="{{.path}}">{{.name}}</a></li>
+					{{ end }}
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>

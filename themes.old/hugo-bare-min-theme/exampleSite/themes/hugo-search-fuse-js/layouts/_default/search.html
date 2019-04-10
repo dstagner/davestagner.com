@@ -1,0 +1,38 @@
+{{ define "main" }} <!-- https://gist.github.com/eddiewebb/735feb48f50f0ddd65ae5606a1cb41ae -->
+
+<div class="search">
+    <header>
+        <h1>{{ .Title }}</h1>
+        {{/* partial "debugprint.html" (.Site.GetPage "/search") */}}
+    </header>
+
+    <form action="{{ .Permalink }}">
+        <input id="search-query" name="q"/>
+    </form>
+    <hr />
+
+    <div id="search-results"></div>
+</div>
+
+<script id="search-result-template" type="text/x-js-template"><div id="summary-${key}">
+        <h2 class="post-title no-text-decoration"><a href="${link}">${title}</a></h2>
+        <p><em>${snippet}&hellip;</em></p>
+        <small>
+            <table>
+                ${ isset tags }<tr><td><strong>Tags</strong></td><td>${tags}</td></tr>${ end }
+                ${ isset categories }<tr><td><strong>Categories</strong></td><td>${categories}</td></tr>${ end }
+            </table>
+        </small>
+    </div></script>
+{{ end }}
+
+{{ define "footer" }}
+<script src={{ "js/libs/jquery/3.3.1/jquery.min.js" | absURL }}></script>
+<script src={{ "js/libs/fuse.js/3.2.1/fuse.min.js" | absURL }}></script>
+<script src={{ "js/libs/mark.js/8.11.1/jquery.mark.min.js" | absURL }}></script>
+
+<!-- Below works *only if* this theme component is named "hugo-search-fuse-js"
+     AND *if* the themesDir is left at the default value of "themes".  -->
+{{ $search_js_md5 := (readFile "themes/hugo-search-fuse-js/static/js/search.js" | md5) }}
+<script src={{ printf "%s?%s" ("js/search.js" | absURL) $search_js_md5 }}></script>
+{{ end }}

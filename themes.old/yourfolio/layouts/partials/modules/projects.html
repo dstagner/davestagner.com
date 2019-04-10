@@ -1,0 +1,22 @@
+{{$page := .}}
+{{- with .Params.projects -}}
+<ul class="projects clearfix">
+  {{- range . -}}
+    <li class="project{{with .class}} {{.}}{{end}}">
+      <a href="{{.link}}">
+        {{- partial "modules/responsive-image" (dict "page" $page "image" .image) -}}
+        <div class="project-hover">
+          <div class="project-caption">
+            {{- with .title -}}
+              <div class="project-title">{{.}}</div>
+            {{- end -}}
+            {{- with .type -}}
+              <div class="project-type">{{.}}</div>
+            {{- end -}}
+          </div>
+        </div>
+      </a>
+    </li>
+  {{- end -}}
+</ul>
+{{- end -}}

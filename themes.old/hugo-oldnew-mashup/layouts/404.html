@@ -1,0 +1,23 @@
+{{ define "title" }}
+  404 Resource  not found
+{{ end }}
+{{ define "bodytag" }}
+  <body>
+<!-- Copyright 2018 Daniel F. Dickinson <cshored@thecshore.com 
+     Release under the Create Commons BY (Attribution) 4.0 License -->
+{{ end }}
+{{ define "main" }}
+    <div class="FourOhFour">
+      <main class="Main">
+        <h1 class="Title">404 Resource not found</h1>
+        <article class="TextBox">
+          <div class="TextBlockSpacingBefore"></div>
+          <div class="TextBlock">
+            {{ print "It seems we can't find that for which you are looking... :disappointed:" | emojify | markdownify }}<br />
+            {{ markdownify " Perhaps you wish to [Browse to find it?](/)" }}
+          </div>
+          <div class="TextBlockSpacingAfter"></div>
+        </article>
+      </main>
+    </div>
+{{ end }}

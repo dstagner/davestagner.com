@@ -1,0 +1,9 @@
+<footer>
+{{if .Site.Params.CopyrightHTML}}
+<div class="text-center">{{.Site.Params.CopyrightHTML | safeHTML}}</div>
+{{ else }}
+&copy; 2015.
+Built with <a href="http://gohugo.io/">Hugo</a> ({{ .Hugo.Version }}) and
+<a href="https://github.com/chibicode/hugo-theme-shiori">Shiori Theme</a>.
+{{ end }}
+</footer>

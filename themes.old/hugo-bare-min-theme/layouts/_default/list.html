@@ -1,0 +1,68 @@
+{{ define "main" }}             <!-- List of all posts -->
+
+{{ partial "header_image.html" . }}
+
+{{ if (eq .Kind "section") }}                          <!-- Section -->
+    {{ if (eq .File.Path "") }} <!-- Regular section -->
+        <h1>Posts in ‘{{ .Dir | default .Section }}’</h1>
+    {{ else }}                  <!-- Branch bundle based section -->
+        <h1>{{ .Title }}</h1>
+        <h2>Posts in ‘{{ .Dir | default .Section }}’</h2>
+    {{ end }}
+{{ else if (eq .Kind "taxonomy") }}
+    <!-- If the page is /tags/foo/, .Data.Singular = "tag", .Data.Term = "foo" -->
+    <h1>Posts with the {{ .Data.Singular }} ‘{{ .Data.Term }}’</h1>
+{{ end }}
+
+<section>
+    <ul class="post-list">
+        {{ range .Pages }}
+            {{ .Render "li" }}
+        {{ end }}
+    </ul>
+</section>
+
+{{ with .Content }}
+    <h3>Content</h3>
+    {{ . }}
+{{ end }}
+
+{{ with .Resources }}
+    <hr>
+    <h3 id="resources">Resources</h3>
+    <ul>
+	{{ range . }}
+	    {{ if .RelPermalink }}
+	        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+	    {{ else }}
+	        <li>{{ .ResourceType | title }} (no link, only embedded in page)</li>
+	    {{ end }}
+	{{ end }}
+    </ul>
+{{ end }}
+
+{{ if (not ($.Param "disable_debug")) }}
+    <hr>
+    <a id="debug"></a>
+    <h3 id="page-debug">Page (Debug)</h3>
+    {{ partial "debugprint.html" . }}
+    {{ with .Params }}
+        <h3 id="page-params-debug">Page Params (Debug)</h3>
+        {{ partial "debugprint.html" . }}
+    {{ end }}
+    {{ with .Resources }}
+        <h3 id="resource-debug">Resources (Debug)</h3>
+        {{ partial "debugprint.html" . }}
+    {{ end }}
+    <h3 id="file-debug">File Object (Debug)</h3>
+    {{ if (ne .File.Path "") }}
+        {{ partial "debugprint.html" .File }}
+    {{ else }}
+        <!-- For pages that don't have an associated content file name,
+             they only have the .File.UniqueID.
+        -->
+        {{ partial "debugprint.html" (dict "UniqueID" .File.UniqueID "Path" .File.Path) }}
+    {{ end }}
+{{ end }}
+
+{{ end }}

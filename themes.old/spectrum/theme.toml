@@ -1,0 +1,12 @@
+name = "Spectrum"
+license = "BSD-3-Clause"
+licenselink = "https://github.com/silvanocerza/spectrum/blob/master/LICENSE"
+description = "An highly customizable Hugo theme based on the CSS framework Bulma."
+homepage = "https://github.com/silvanocerza/spectrum/"
+tags = ["responsive", "flexbox", "no-javascript", "bulma", "customizable", "mobile"]
+features = ["posts"]
+min_version = "0.54"
+
+[author]
+  name = "Silvano Cerza"
+  homepage = "https://github.com/silvanocerza/"

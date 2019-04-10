@@ -1,0 +1,45 @@
+baseURL = "https://example.com"
+languageCode = "en-us"
+title = "Onepress Example Site"
+description = "a Blog by Jeremiah Succeed"
+theme = "onepress"
+# Enter your tracking code to enable Google Analytics
+googleAnalytics = ""
+# Disable comments by leaving disqusShortname empty
+disqusShortname = ""
+copyright = "Copyright © 2019, Jeremiah Succeed; all rights reserved."
+canonifyURLS = true
+paginate = 12
+
+[params]
+	author = "Jeremiah Succeed"
+        bio = "Fullstack web developer and Templates designer."
+	logo = "images/logo.png"
+	avatar = "images/logo.png"
+	opengraphImage = "images/logo.png"
+	enableRSS = true
+	subscribeLink = "https://github.com/ijsucceed/onepress/blob/master/README.md#subscribe-link"
+	customCSS = false
+        readMore = "Read Up"
+    
+    # Social
+	twitter  = "https://twitter.com/username"
+	github   = "https://github.com/username"
+	facebook  = ""
+        linkedin  = ""
+
+    
+    # Widget
+    widgets = true
+    
+    # Author box and Share button
+    authorCard = false 
+    shareButton = true
+    
+    # Code highlighting with highlight.js
+    highlightJS = true
+
+# Taxonomies
+[taxonomies]
+    tag = "tags"
+

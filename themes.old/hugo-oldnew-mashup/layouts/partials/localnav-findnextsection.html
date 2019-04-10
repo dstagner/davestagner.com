@@ -1,0 +1,35 @@
+{{ $curCtx := . }}
+{{ $curPage := (.Scratch.Get "lnfpCurPage") }}
+{{ $curPage.Scratch.Set "lnfpNextPage" nil }}
+{{ $curPage.Scratch.Set "lnfpFoundPage" false }}
+<!-- Let's find the next section in our parent -->
+{{ with $curPage }}
+  {{ range .Parent.Sections }}
+    {{ if eq . $curPage }}
+      {{ $curPage.Scratch.Set "lnfpFoundPage" true }}
+    {{ else if and ($curPage.Scratch.Get "lnfpFoundPage") (eq ($curPage.Scratch.Get "lnfpNextPage") nil) }}
+      {{ $curPage.Scratch.Set "lnfpNextPage" . }}
+    {{ end }}
+  {{ end }}
+  {{ if (.Scratch.Get "lnfpFoundPage") }}
+    {{ if (.Scratch.Get "lnfpNextPage") }}
+      <a href="{{ (.Scratch.Get "lnfpNextPage").URL | relURL }}">Next</a>
+    {{ else if .Parent }}
+      {{ if .Parent.Parent }}
+        {{ .Parent.Scratch.Set "lnfpCurPage" .Parent }}
+        {{ partial "localnav-findnextsection" .Parent }}
+      {{ else }}
+  <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      {{ end }}
+    {{ else }}
+  <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    {{ end }}
+  {{ else }}
+<!-- This should never happen since we should at least
+find ourself -->
+  <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  {{ end }}
+{{ end }}
+{{ $curPage.Scratch.Delete "lnfpNextPage" }}
+{{ $curPage.Scratch.Delete "lnfpFoundPage" }}
+{{ $curPage.Scratch.Delete "lnfpCurPage" }}

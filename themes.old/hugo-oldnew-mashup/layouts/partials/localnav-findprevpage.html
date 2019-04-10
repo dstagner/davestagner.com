@@ -1,0 +1,38 @@
+{{ $curPage := . }}
+{{ .Scratch.Set "lnfpPrevPage" nil }}
+{{ if .NextInSection }}
+  <a href="{{ .NextInSection.URL | relURL }}">Prev</a>
+{{ else }}
+  <!-- if no previous sibling data pages (hence
+        no .NextInSection) -->
+  {{ if .Parent }}
+    {{ with .Parent }}
+      {{ if $curPage.IsPage }}
+        {{ if .Sections }}
+          {{ $curParent := . }}
+          {{ range (last 1 .Sections) }}
+            {{ if .Parent }}
+              {{ partial "localnav-prevsection" .Parent }}
+            {{ else }}
+  <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            {{ end }}
+          {{ end }}
+        {{ else }}
+         <a href="{{ .URL | relURL }}">Prev</a>
+        {{ end }}
+      {{ else }}
+        {{ if and (.Parent) (.Data.Pages) }}
+          {{ range (last 1 .Data.Pages) }}
+          <a href="{{ .URL | relURL }}">Prev</a>
+          {{ end }}
+        {{ else if and (.Sections) }}
+          {{ partial "localnav-prevsection" $curPage }}
+        {{ else }}
+  <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ else }}
+  <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  {{ end }}
+{{ end }}

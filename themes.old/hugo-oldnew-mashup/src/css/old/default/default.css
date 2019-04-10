@@ -1,0 +1,33 @@
+/*
+  The C Shore default colour settings
+  Copyright 2007-2009 Daniel F. Dickinson <thecshore@thecshore.cshore.com>
+*/
+
+//  This file is free software; you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation; either version 2 of the License, or
+//  (at your option) any later version.
+
+//  This file is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+
+//  You should have received a copy of the GNU General Public License along
+//  with this file, if not, write to the Free Software Foundation,
+//  Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+// Contains the default colour and font definitions for plain elements
+//   (no class or id specifiers).
+
+//   For different colour and font definitions used to enhance
+//   accessibility, see high_contrast, large_print, and large_font, and larger
+//   CSS files
+
+@import url(structure-plain-elements.css);
+@import url(default-plain-elements.css);
+@import url(default-plain-elements-flow.css);
+@import url(structure-default-template.css);
+@import url(structure-default-template-flow.css);
+@import url(default-default-template.css);
+@import url(default-default-template-flow.css);

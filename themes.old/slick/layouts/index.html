@@ -1,0 +1,18 @@
+{{- define "main" }}
+{{ $showfull := (default false $.Site.Params.showFullContent) }}
+{{- range $idx, $_ := .Paginator.Pages }}
+<div{{ if and $showfull $idx }} class="post-divider"{{ end }}>
+  <div>
+    <h2 class="post-title">
+      {{ if .Draft }}DRAFT: {{ end }}
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </h2>
+    {{ partial "post_meta.html" . }}
+  </div>
+  <div>
+    {{ cond $showfull .Content .Summary }}
+  </div>
+</div>
+{{- end }}
+{{ partial "pagination.html" . }}
+{{- end }}

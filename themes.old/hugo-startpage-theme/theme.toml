@@ -1,0 +1,15 @@
+# theme.toml template for a Hugo theme
+# See https://github.com/gohugoio/hugoThemes#themetoml for an example
+
+name = "Startpage"
+license = "MIT"
+licenselink = "https://github.com/tnwhitwell/hugo-startpage-theme/blob/master/LICENSE.md"
+description = "A simple Start Page theme based on MDL"
+homepage = "https://github.com/tnwhitwell/hugo-startpage-theme/"
+tags = ["speed-dial", "single-page", "material-design", "responsive", "one-page", "offline"]
+features = ["offline caching"]
+min_version = "0.38.1"
+
+[author]
+  name = "Tom Whitwell"
+  homepage = "https://tom.whitwell.xyz"

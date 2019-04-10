@@ -1,0 +1,49 @@
+<nav class="SitebarSitemap">
+<ul class="SitemapList">
+  <!-- Copyright 2018 Daniel F. Dickinson,
+       Released under the Creative Commons 4.0 BY (Attribution) License -->
+{{ if .Page.Params.siteMenuMaxLevel }}
+  {{ .Scratch.Set "steMaxLevel" .Page.Params.siteMenuMaxLevel }}
+{{ else if .Site.Params.siteMenuMaxLevel }}
+  {{ .Scratch.Set "siteMaxLevel" .Site.Params.siteMenuMaxLevel }}
+{{ else }}
+  {{ .Scratch.Set "siteMaxLevel" 3 }}
+{{ end }}
+{{ $maxLevel := .Scratch.Get "siteMaxLevel" }}
+{{ range $.Site.Sections }}
+  {{ .Scratch.Set "siteMaxLevel" $maxLevel }}
+  {{ .Scratch.Set "siteCurLevel" 0 }}
+  {{ if .Data.Pages }}
+    {{ if le (.Scratch.Get "siteCurLevel") $maxLevel }}
+      {{ .Scratch.Set "hasSubmenu" true }}
+      {{ partial "sitemenuitem" . }}
+    {{ end }}
+    {{ if not .Sections }}
+      {{ .Scratch.Set "siteCurLevel" 1 }}
+    {{ else }}
+      {{ if le (.Scratch.Get "siteCurLevel") $maxLevel }}
+      {{ end }}
+    {{ end }}
+    {{ partial "sitemenusibs" . }}
+    {{ if le (.Scratch.Get "siteCurLevel") $maxLevel }}
+      {{ .Scratch.Set "siteSections" .Sections }}
+      {{ .Scratch.Set "hasSubmenu" true }}
+      {{ .Scratch.Set "siteCurLevel" 0 }}
+      {{ partial "sitemenusub" . }}
+      </ul></li>
+    {{ end }}
+  {{ else }}
+    {{ if not .Sections }}
+      {{ .Scratch.Set "hasSubmenu" false }}
+      {{ partial "sitemenuitem" . }}
+    {{ else if le (.Scratch.Get "siteCurLevel") $maxLevel }}
+      {{ .Scratch.Set "siteSections" .Sections }}
+      {{ .Scratch.Set "hasSubmenu" true }}
+      {{ .Scratch.Set "siteCurLevel" 0 }}
+      {{ partial "sitemenuitem" . }}
+      {{ partial "sitemenusub" . }}
+      </ul></li>
+    {{ end }}
+  {{ end }}
+{{ end }}
+</ul></nav>

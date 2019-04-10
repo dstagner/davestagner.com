@@ -1,0 +1,21 @@
+# theme.toml template for a Hugo theme
+# See https://github.com/gohugoio/hugoThemes#themetoml for an example
+
+name = "Alpha Church"
+license = "Creative Commons Attribution 3.0"
+licenselink = "https://github.com/funkydan2/alpha-church/blob/master/LICENSE.md"
+description = "A hugo port of html5up Alpha theme. Customised for church use."
+homepage = "https://github.com/funkydan2/alpha-church"
+tags = ["church", "podcast"]
+features = ["drop down menu", "banner", "feature images", "fontawesome", "podcast"]
+min_version = "0.48"
+
+[author]
+  name = "Daniel Saunders"
+  homepage = "https://github.com/funkydan2"
+
+# If porting an existing theme
+[original]
+  name = ""
+  homepage = ""
+  repo = ""

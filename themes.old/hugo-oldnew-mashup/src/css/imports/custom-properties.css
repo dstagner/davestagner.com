@@ -1,0 +1,37 @@
+/*! Copyright 2007-2009,2017-2018 Daniel F. Dickinson (<cshored@thecshore.com>)
+ *  Released under the Creative Commons BY (Attribution) 4.0 License
+ */
+
+/* The C Shore custom-properties base import for PostCSS-cssnext */
+:root {
+  --sans: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  --serif: Georgia, serif;
+  --monospace: "Lucida Console", Monaco, monospace;
+  --hrefTextDecoration: underline;
+  --hrefPadding: 0;
+  --preformattedTextBorder: dashed 1px;
+  --imageBorder: none;
+  --shortformPopupCursor: help;
+  --shortformBorderBottom: 1px dashed;
+  --unorderedListItemPaddingBottom: 3px;
+  --horizontalRuleSurroundSpace: 0px;
+  --baseNonRWDFontSize: 16px;
+  --baseRWDFontSize: 20px;
+  --semiBlockIndent: 5%;
+  --footNoteFontSize: smaller;
+  --utilityBoxBorderWidth: 4px;
+  --utilityBoxBorderStyle: solid;
+  --utilityBoxBorderColor: black;
+  --utilityBoxPadding: inherit .2em inherit .2em;
+  --topbarBorderTop: none;
+  --topbarBorderLeft: none;
+  --topbarBorderRight: none;
+  --topbarBorderBottom: none;
+  --topbarBorderBottomColor: none;
+  --topbarBorderTopColor: none;
+  --topbarBorderLeftColor: none;
+  --topbarBorderRightColor: none;
+  --topbarPadding: .3em;
+  --topbarMargin: 0px;
+  --utilityBoxWrapperDisplay: inline-block;
+}

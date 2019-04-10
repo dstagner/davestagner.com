@@ -1,0 +1,10 @@
+{{ partial "header.html" . }}
+<main>
+<article class="post">
+  <h2><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a></h2>
+  {{ .Content }}
+  <p class="small gray spacious"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 02, 2006" }}</time></p>
+  <a href="{{ .Site.BaseURL }}">Back</a>
+</article>
+</main>
+{{ partial "footer.html" . }}

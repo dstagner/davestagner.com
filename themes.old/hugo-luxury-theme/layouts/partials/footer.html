@@ -1,0 +1,16 @@
+        <!-- Footer -->
+            <footer id="footer" class="wrapper alt">
+                <div class="inner">
+                    <ul class="menu align-center">
+                        <li>{{ now.Format "2006"}} &copy; {{ with .Site.Params.footer.copyright }}{{ . | markdownify }}{{ else }}<a href="https://github.com/aerohub/hugo-luxury-theme" target="_blank">Hugo Luxury Theme</a> by <a href="https://github.com/aerohub" target="_blank">Pavel Kanyshev</a>{{ end }}</li>
+                      {{ range .Site.Menus.footer }}
+                        <li><a href="{{.URL }}">{{ .Name }}</a></li>
+                      {{end}}
+                    </ul>
+                    <ul class="icons align-center">
+                        {{ range .Site.Params.social }}
+                        <li><a href="{{ .link }}" class="icon {{ .icon }}"><span class="label">{{ .title }}</span></a></li>
+                        {{ end }}
+                    </ul>
+                </div>
+            </footer>

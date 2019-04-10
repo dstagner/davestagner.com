@@ -1,0 +1,112 @@
+{{ define "main" }}
+
+{{ partial "header_image.html" . }}
+
+{{ with .Content }}
+    <h3>Content</h3>
+    {{ . }}
+{{ end }}
+
+{{ with .Resources }}
+    <hr />
+    <h3 id="resources">Resources</h3>
+    <ul>
+	{{ range . }}
+	    {{ if .RelPermalink }}
+	        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+	    {{ else }}
+	        <li>{{ .ResourceType | title }} (no link, only embedded in page)</li>
+	    {{ end }}
+	{{ end }}
+    </ul>
+{{ end }}
+
+<!-- Have the paginator list posts, sorted by last modified date, most recent first -->
+{{ $paginator := .Paginate (.Pages.ByLastmod.Reverse) 10 }}
+
+<div class="posts">
+    <!-- http://justindunham.net/blog-bells-and-whistles-in-hugo/ -->
+    {{ range $paginator.Pages }}
+        {{ .Render "summary"}}
+    {{ end }}
+</div>
+
+<p>
+    <div class="pagination">
+        <!-- https://discourse.gohugo.io/t/solved-big-pagination-need-add/6576/8?u=kaushalmodi -->
+        <!--
+             Pagination for different values of paginateWindow.
+
+              1:  1+  2   3   4   5   6   7   .  12
+              2:  1   2+  3   4   5   6   7   .  12
+              3:  1   2   3+  4   5   6   7   .  12
+              4:  1   2   3   4+  5   6   7   .  12
+              5:  1   2   3   4   5+  6   7   .  12
+              6:  1   .   4   5   6+  7   8   .  12
+              7:  1   .   5   6   7+  8   9   .  12
+              8:  1   .   6   7   8+  9  10  11  12
+              9:  1   .   6   7   8   9+ 10  11  12
+             10:  1   .   6   7   8   9  10+ 11  12
+             11:  1   .   6   7   8   9  10  11+ 12
+             12:  1   .   6   7   8   9  10  11  12+
+        -->
+        {{ $window := .Site.Params.paginateWindow | default 1 }}
+        {{ if gt $paginator.TotalPages 1 }}
+            {{ $total := $paginator.TotalPages }}
+            {{ $size := add 7 (mul 2 $window) }}
+            {{ $curr_page := $paginator.PageNumber }}
+            {{ $page_num_list := slice }} <!-- Initialize -->
+            {{ if (gt $total $size) }}
+                {{ if (lt $curr_page (sub $size (add $window 1))) }}
+                    {{ $page_num_list = (seq 1 (sub $size 2)) }}
+                {{ else if (lt (sub $total $curr_page) (sub $size (add $window 2))) }}
+                    {{ $page_num_list = (seq (add (sub $total $size) 3) $total) }}
+                {{ else }}
+                    {{ $page_num_list = (seq (sub $curr_page $window) (add $curr_page $window)) }}
+                {{ end }}
+                {{ $page_num_list = (union $page_num_list (slice 1 $total)) }}
+            {{ else }}
+                {{ $page_num_list = (seq 1 $total) }}
+            {{ end }}
+
+            <!-- https://gohugo.io/templates/pagination/#build-the-navigation -->
+            {{ range $paginator.Pagers }}
+                {{ $curr_page := .PageNumber }}
+                {{ if (in $page_num_list $curr_page) }}
+                    <a href="{{ .URL }}">
+                        {{- if eq . $paginator -}}<b>{{- end -}}
+                            {{ .PageNumber }}
+                        {{- if eq . $paginator -}}</b>{{- end -}}
+                    </a>
+                {{ else if in (slice 2 (sub $total 1)) $curr_page }}
+                    <a name="">&hellip;</a>
+                {{ end }}
+            {{ end }}
+        {{ end }}
+
+        [
+        {{ if .Paginator.HasPrev }}
+            <a href="{{ .Paginator.Prev.URL }}">Newer</a>
+        {{ end }}
+        {{ if .Paginator.HasNext }}
+            <a href="{{ .Paginator.Next.URL }}">Older</a>
+        {{ end }}
+        ]
+    </div>
+</p>
+
+{{ if (not ($.Param "disable_debug")) }}
+    {{ if (eq 1 $paginator.PageNumber) }}
+        <hr />
+        <h3 id="debug">SiteInfo (Debug)</h3>
+        {{ partial "debugprint.html" .Site }}
+        <hr />
+        <h3 id="file-debug">File Object (Debug)</h3>
+        {{ partial "debugprint.html" .File }}
+        <hr />
+        <h3 id="debug-menu">Menu (Debug)</h3>
+        {{ partial "debugprint.html" .Site.Menus }}
+    {{ end }}
+{{ end }}
+
+{{ end }}
