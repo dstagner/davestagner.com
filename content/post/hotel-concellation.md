@@ -1,5 +1,6 @@
 ---
 title: "Hotel Concellation"
+coverImage: "img/Hotel Concellation-03.jpg"
 date: 2020-09-04
 draft: false
 ---
