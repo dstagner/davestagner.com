@@ -1,3 +1,11 @@
++++
+title = "10x rockstar ninja wizard vampires"
+keywords = ["tech", "Conway's Law", "Hacker Noon"]
+date = "2020-09-05"
+coverImage = "/img/Prosecutors_office_burned_bishkek.JPG"
+
++++
+
 The endless calls for “10x”, “rockstar”, “ninja”, “wizard” programmers irritate many of us in the profession, mostly those of us who would never call ourselves such a thing. And we get laughed at, as sour-grapes B-listers who just don’t have the chops to be in such exalted company. But no. We don’t like the 10x rockstar ninja programmers, because we’ve worked with them, and know what they do.
 
 They’re not ninjas. They’re vampires.
