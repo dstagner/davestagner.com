@@ -1,8 +1,0 @@
-        <li><a href="{{ .URL | relURL }}">{{ .Title }}</a>
-          <ol>
-            {{ partial "section-nesting" . }}
-            {{ range .Sections }}
-              {{ partial "section-listing" . }}
-            {{ end }}
-          </ol>
-        </li>

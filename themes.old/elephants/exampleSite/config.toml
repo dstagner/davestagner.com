@@ -1,7 +1,0 @@
-baseURL = "http://example.org/"
-languageCode = "en-us"
-title = "Example Blog"
-theme = "elephants"
-
-[params]
-    sitename = "Elephants"

@@ -1,3 +1,0 @@
-Sitemap: https://marcanuy.github.io/hugotube/sitemap.xml
-
-User-agent: *
