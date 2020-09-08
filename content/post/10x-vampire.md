@@ -6,7 +6,7 @@ date = "2020-09-05"
 
 +++
 
-The endless calls for “10x”, “rockstar”, “ninja”, “wizard” programmers irritate many of us in the profession, mostly those of us who would never call ourselves such a thing. And we get laughed at, as sour-grapes B-listers who just don’t have the chops to be in such exalted company. But no. We don’t like the 10x rockstar ninja programmers, because we’ve worked with them, and know what they do.
+The endless calls for “10x”, “rockstar”, “ninja”, “wizard” programmers irritate many of us in the profession, mostly those of us who would never call ourselves such a thing. And we get laughed at, as sour-grapes B-listers who just don’t have the chops to be in such exalted company. But no. We don’t like the 10x rockstar ninja programmers, because we’ve worked with them, and know what they are.
 
 *They’re vampires.*
 
@@ -27,8 +27,9 @@ Are you sure you want to hire them to work on your code?
 ## Wizards
 ![Terry Pratchett](/img/prachett-senior-wizard.jpeg)
 
-When in doubt, shoot the wizard.
-- Tamora Pierce
+*When in doubt, shoot the wizard.
+
+- Tamora Pierce*
 
 We’ve learned a lot about wizards from fiction. Some of them are just con artists hiding behind a curtain. Some of them look down on Muggles like us. Some get us to love them, then disappear when we need them the most.
 
@@ -40,8 +41,9 @@ But J.R.R. Tolkien taught us the best thing about wizards. He taught us that the
 ![Jerrry Garcia](/img/jerry.jpeg)
 *Jerry Garcia, 1987. Courtesy of Wikimedia.*
 
-There’s an illusion that I’m leading the band, but really I’m just loud.
-- Jerry Garcia
+*There’s an illusion that I’m leading the band, but really I’m just loud.
+
+- Jerry Garcia*
 
 Jerry Garcia, the famous lead guitarist for the Grateful Dead, understood the truth very well — it’s not the “lead guitar” that leads the music. It’s the rhythm section — bass, drums, rhythm guitar. The rockstar programmer relies on a quality team. To be a great player, you have to be a team player.
 
