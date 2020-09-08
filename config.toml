@@ -1,7 +1,7 @@
 baseURL = "/"
 languageCode = "en-us"
 title = "Dave Stagner"
-theme = "hugo-tranquilpeak-theme"
+theme = "kiss"
 googleAnalytics = "UA-40292660-1"
 
 [author]
