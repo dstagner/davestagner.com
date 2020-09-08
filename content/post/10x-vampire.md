@@ -17,7 +17,7 @@ They might bleed the team by draining the vitality of individuals. They can demo
 Or worse, they can drain the future life of the team — building unmaintainable, hacky code, not documenting their decisions, letting coupling bleed across layers that quickly turn into Lava Flow antipatterns. The project may pay dearly in the future for that 10x now.
 
 ## Ninjas
-!(/img/ninja-kitten.jpeg)
+![ninja kitten](/img/ninja-kitten.jpeg)
 Ninjas are nameless, faceless mercenaries. The ninja’s job is to create mayhem for the highest bidder. The ninja shows up in the dark of night, uses mysterious powers and ruthless violence to create disaster, then disappears in a puff of smoke.
 
 Ninjas are nameless, faceless, heartless, merciless enemies.
@@ -25,7 +25,7 @@ Ninjas are nameless, faceless, heartless, merciless enemies.
 Are you sure you want to hire them to work on your code?
 
 ## Wizards
-!(/prachett-senior-wizard.jpeg)
+![Terry Pratchett](/prachett-senior-wizard.jpeg)
 
 When in doubt, shoot the wizard.
 - Tamora Pierce
@@ -37,7 +37,7 @@ More importantly, thought… what makes a wizard a wizard is that they use magic
 But J.R.R. Tolkien taught us the best thing about wizards. He taught us that the wizards aren’t the ones who save the world, in the end. It’s ordinary people. A couple of determined hobbits can do what no wizard can do.
 
 ## Rhythm and leadership
-!(/img/jerry.jpeg)
+![Jerrry Garcia](/img/jerry.jpeg)
 Jerry Garcia, 1987. Courtesy of Wikimedia.
 
 There’s an illusion that I’m leading the band, but really I’m just loud.
