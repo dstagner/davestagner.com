@@ -2,7 +2,7 @@
 title = "10x rockstar ninja wizard vampires"
 keywords = ["tech", "Conway's Law", "Hacker Noon"]
 date = "2020-09-05"
-coverImage = "/img/this-awesome.jpeg"
+# coverImage = "/img/this-awesome.jpeg"
 
 +++
 
@@ -25,7 +25,7 @@ Ninjas are nameless, faceless, heartless, merciless enemies.
 Are you sure you want to hire them to work on your code?
 
 ## Wizards
-![Terry Pratchett](/prachett-senior-wizard.jpeg)
+![Terry Pratchett](/img/prachett-senior-wizard.jpeg)
 
 When in doubt, shoot the wizard.
 - Tamora Pierce
@@ -38,7 +38,7 @@ But J.R.R. Tolkien taught us the best thing about wizards. He taught us that the
 
 ## Rhythm and leadership
 ![Jerrry Garcia](/img/jerry.jpeg)
-Jerry Garcia, 1987. Courtesy of Wikimedia.
+*Jerry Garcia, 1987. Courtesy of Wikimedia.*
 
 There’s an illusion that I’m leading the band, but really I’m just loud.
 - Jerry Garcia
